@@ -3,6 +3,8 @@ node_modules/
 _assignment/
 dist/
 .cache/
+config/
+
 
 .npm
 .env
