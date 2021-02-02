@@ -1,0 +1,32 @@
+{
+  "name": "wafs",
+  "version": "1.0.0",
+  "description": "Web App From Scratch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joordy/web-app-from-scratch-2021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joordy/web-app-from-scratch-2021/issues"
+  },
+  "homepage": "https://github.com/joordy/web-app-from-scratch-2021#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/runtime-corejs2": "^7.12.5",
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.32.6"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
