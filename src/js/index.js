@@ -1,7 +1,7 @@
 import 'regenerator-runtime/runtime'
 
 import { getMyData } from './utils/helpers/getMyData'
-import { endpoint } from './utils/helpers/endpoints'
+// import { endpoint } from './utils/helpers/endpoints'
 import { accessKey } from './utils/config/config'
 
 let clicked = false
