@@ -3,18 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <script src="https://kit.fontawesome.com/e814c1f3cd.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <h1>UnJorrr</h1>
+    <header>
+      <h1>Picture Gallery</h1>
 
-    <div>
-      <label for="search">Zoeken</label>
-      <input type="text" id="searchElement" />
-      <button id="searchPhotos">Zoeken</button>
-    </div>
+      <!-- <label for="search">Zoeken</label> -->
+      <article>
+        <input
+          type="text"
+          id="searchElement"
+          placeholder="Search free photo's"
+        />
+        <button id="searchPhotos">Zoeken</button>
+        <p id="searchQuery"></p>
+      </article>
+    </header>
 
     <main id="dataWrapper"></main>
+
+    <footer>
+      <nav>
+        <ul>
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+          <li>D</li>
+          <li>E</li>
+        </ul>
+      </nav>
+    </footer>
     <script src="./js/index.js"></script>
   </body>
 </html>

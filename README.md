@@ -1,4 +1,4 @@
-# Web App From Scratch @cmda-minor-web 2020 - 2021
+# Web App From Scratch
 
 ## 🔦 Description
 
@@ -50,7 +50,7 @@
 
 ## 🔍 Sources
 
-- Source (n.d.) Writer, Source. Retrieved February 01, 2020, from weblink
+<!-- - Source (n.d.) Writer, Source. Retrieved February 01, 2020, from weblink -->
 
 ---
 

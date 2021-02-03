@@ -1,33 +1,44 @@
 import 'regenerator-runtime/runtime'
-
 import { getMyData } from './utils/helpers/getMyData'
-import { endpoint } from './utils/helpers/endpoints'
+import { globalUrl, searchUrl } from './utils/helpers/endpoints'
 import { accessKey } from './utils/config/config'
 
 let clicked = false
-let button = document.querySelector('#searchPhotos')
-button.addEventListener('click', functionName)
+let searchButton = document.querySelector('#searchPhotos')
+let searchBar = document.querySelector('#searchElement')
 
-function functionName(clicked) {
+searchButton.addEventListener('click', function () {
   clicked = true
   console.log(clicked)
-  checkDataSource(clicked)
-}
+  checkDataSource(globalUrl, searchUrl, clicked)
+})
 
-const checkDataSource = (clicked) => {
+searchBar.addEventListener('keyup', function (event) {
+  if (event.keyCode === 13) {
+    clicked = true
+    console.log(clicked)
+    checkDataSource(globalUrl, searchUrl, clicked)
+  }
+})
+
+const checkDataSource = async (globalUrl, searchUrl, clicked) => {
   if (clicked == true) {
-    console.log(clicked)
-
-    let url = 'https://api.unsplash.com/search/photos/?client_id='
     let writtenQuery = document.getElementById('searchElement').value
-    const abc = getMyData(`${url}${accessKey}&query=${writtenQuery}`)
-    console.log(`Searched with the Query: ${writtenQuery}`)
+    const data = await getMyData(
+      `${searchUrl}${accessKey}&query=${writtenQuery}`
+    )
+    console.log(data, data.total, data.total_pages)
+    let renderPage = renderHTML(writtenQuery)
   } else if (clicked == false) {
-    console.log(clicked)
-    let url = 'https://api.unsplash.com/photos/?client_id='
-    const cba = getMyData(`${url}${accessKey}`)
-    console.log(`Standard search`)
+    const data = await getMyData(`${globalUrl}${accessKey}`)
+    console.log(data)
   }
 }
 
-const ab = checkDataSource(clicked)
+const work = checkDataSource(globalUrl, searchUrl, clicked)
+
+const renderHTML = (writtenQuery) => {
+  let searchQuery = document.querySelector('#searchQuery')
+  searchQuery.innerHTML = `Zoekterm: ${writtenQuery}`
+  console.log(`Searched with the Query: ${writtenQuery}`)
+}
