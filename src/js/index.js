@@ -18,9 +18,10 @@ const checkDataSource = async (globalUrl, searchUrl, clicked) => {
     const data = await getMyData(
       `${searchUrl}${accessKey}&query=${writtenQuery}`
     )
+    let removeResults = removeOldResults()
+
     let renderQuery = renderSearch(writtenQuery)
     let renderData = renderImages(data.results)
-    // let removeResults = removeOldResults()
   } else if (clicked == false) {
     const data = await getMyData(`${globalUrl}${accessKey}`)
     console.log(data)

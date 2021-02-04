@@ -12,12 +12,14 @@ export const renderImages = (data) => {
 
   data.forEach((item) => {
     element.setAttribute('id', 'searchedImage')
-    element.src = item.urls.regular
+    element.src = item.urls.thumb
     content.appendChild(element)
   })
 }
 
-// export const removeOldResults = () => {
-//   const elements = document.getElementById('searchedImage')
-//   elements.remove()
-// }
+export const removeOldResults = () => {
+  const elements = document.getElementById('dataWrapper')
+  if (elements.hasChildNodes()) {
+    elements.removeChild(elements.childNodes[0])
+  }
+}
