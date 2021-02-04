@@ -8,11 +8,15 @@ export const renderSearch = (writtenQuery) => {
 // Render first image on page
 export const renderImages = (data) => {
   let content = document.getElementById('dataWrapper')
-  let element = document.createElement('img')
+  // let element = document.createElement('img')
+  // element.setAttribute('id', 'searchedImage')
+  // element.src = data[0].urls.thumb
+  // content.appendChild(element)
 
   data.forEach((item) => {
+    let element = document.createElement('img')
     element.setAttribute('id', 'searchedImage')
-    element.src = item.urls.thumb
+    element.src = item.urls.regular
     content.appendChild(element)
   })
 }
@@ -20,6 +24,10 @@ export const renderImages = (data) => {
 export const removeOldResults = () => {
   const elements = document.getElementById('dataWrapper')
   if (elements.hasChildNodes()) {
+    let allElements = Array.from(elements.childNodes)
     elements.removeChild(elements.childNodes[0])
+    allElements.forEach((item) => {
+      item.remove()
+    })
   }
 }
