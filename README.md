@@ -6,6 +6,8 @@
 
 ## 🚀 Live link
 
+[wafs.jorrr.dev](https://wafs.jorrr.dev/)
+
 ---
 
 ## 📄 Patterns
@@ -51,6 +53,8 @@
 ## 🔍 Sources
 
 <!-- - Source (n.d.) Writer, Source. Retrieved February 01, 2020, from weblink -->
+
+- https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild
 
 ---
 

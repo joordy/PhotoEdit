@@ -1,0 +1,30 @@
+header h1 {
+  margin: 0 0 0.5em 0;
+}
+
+header article {
+  width: calc(100%);
+  position: relative;
+  left: 0;
+  /* height: 3em; */
+}
+
+header article input[type='text'] {
+  width: 100%;
+  padding: 5px 10px 5px 1em;
+  height: 3em;
+  border: none;
+  border: 1px solid grey;
+}
+
+header article button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 3em;
+  outline: none;
+}
+
+header article p {
+  margin: 1em 0;
+}
