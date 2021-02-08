@@ -1,21 +1,19 @@
 import Navigo from 'navigo'
+import { homeView } from '../views/home'
+import { detailedView } from '../views/detailed'
+import { errorView } from '../views/error'
 
-const root = null
-const router = new Navigo(root, false)
+const router = new Navigo('/', false)
 
 export const Router = () => {
-  const main = document.querySelector('#app')
+  const body = document.querySelector('#app')
 
   try {
     router
       .on({
-        '/': () => {
-          console.log('home')
-        },
-        ///': getIndexPage(element, router)
-        '/about': () => {
-          console.log('about')
-        },
+        '/': homeView(body, router),
+        '/about': detailedView(body, router),
+        '/error': errorView(body, router),
       })
       .notFound(() => {
         console.error('404...')

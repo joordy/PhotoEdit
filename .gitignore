@@ -12,3 +12,4 @@ config/
 .babelrc
 .prettierrc
 .eslintrc.json
+_copy/
