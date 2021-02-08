@@ -1,0 +1,30 @@
+/* Footer */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--white);
+  border-top: 1px solid black;
+}
+
+footer nav ul {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+footer nav ul li {
+  padding: 1.25em;
+  list-style-type: none;
+  text-align: center;
+  line-height: 100%;
+  vertical-align: middle;
+}
+
+@media (prefers-color-scheme: dark) {
+  footer {
+    background-color: var(--lightDarker);
+  }
+}

@@ -1,0 +1,46 @@
+main {
+  background-color: var(--white);
+  position: relative;
+  width: calc(100% + 2em);
+  left: -1em;
+  min-height: 75vh;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 24px 16px 16px 16px;
+  margin-bottom: 3.5em;
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 250px;
+}
+
+#searchedImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    padding: 32px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    padding: 32px 48px;
+    grid-gap: 32px;
+  }
+}
+
+/*************************************
+            DarkMode
+**************************************/
+
+@media (prefers-color-scheme: dark) {
+  main {
+    background-color: var(--lightDark);
+  }
+}

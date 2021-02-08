@@ -1,0 +1,77 @@
+// // Fetch data, if when query is available, else when undefined
+// const checkDataSource = async (globalUrl, searchUrl, clicked) => {
+//   if (clicked == true) {
+//     let writtenQuery = document.getElementById('searchElement').value
+//     const data = await getMyData(
+//       `${searchUrl}${accessKey}&query=${writtenQuery}&per_page=33`
+//     )
+//     let removeItems = removeResults()
+//     let renderQuery = renderSearch(writtenQuery)
+//     let renderData = renderImages(data.results)
+//   } else if (clicked == false) {
+//     const data = await getMyData(`${globalUrl}${accessKey}&per_page=33`)
+//     console.log(data)
+//     let renderData = renderImages(data)
+//   }
+// }
+
+// // Event listener for search button
+// searchButton.addEventListener('click', function () {
+//   let abc = setVariable(true)
+//   const res = getVariable(abc)
+//   console.log(res)
+//   checkDataSource(globalUrl, searchUrl, clicked)
+// })
+
+// // Event listener for enter key
+// searchBar.addEventListener('keyup', function (event) {
+//   if (event.keyCode === 13) {
+//     setVariable(true)
+//     const res = getVariable()
+//     console.log(res)
+//     checkDataSource(globalUrl, searchUrl, clicked)
+//   }
+// })
+
+// // Initial function fire
+// const init = checkDataSource(globalUrl, searchUrl, clicked)
+
+
+
+
+
+// Fetch data, if when query is available, else when undefined
+// const checkDataSource = async (globalUrl, searchUrl, clicked) => {
+//   if (clicked == true) {
+//     let writtenQuery = document.getElementById('searchElement').value
+//     const data = await getMyData(
+//       `${searchUrl}${accessKey}&query=${writtenQuery}&per_page=33`
+//     )
+//     let removeResults = removeOldResults()
+//     let renderQuery = renderSearch(writtenQuery)
+//     let renderData = renderImages(data.results)
+//   } else if (clicked == false) {
+//     const data = await getMyData(`${globalUrl}${accessKey}&per_page=33`)
+//     console.log(data)
+//     let renderData = renderImages(data)
+//   }
+// }
+
+// // Event listener for search button
+// searchButton.addEventListener('click', function () {
+//   clicked = true
+//   console.log(clicked)
+//   checkDataSource(globalUrl, searchUrl, clicked)
+// })
+
+// // Event listener for enter key
+// searchBar.addEventListener('keyup', function (event) {
+//   if (event.keyCode === 13) {
+//     clicked = true
+//     console.log(clicked)
+//     checkDataSource(globalUrl, searchUrl, clicked)
+//   }
+// })
+
+// // Initial function fire
+// const init = checkDataSource(globalUrl, searchUrl, clicked)

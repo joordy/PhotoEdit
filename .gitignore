@@ -9,3 +9,6 @@ config/
 .npm
 .env
 .env.test
+.babelrc
+.prettierrc
+.eslintrc.json

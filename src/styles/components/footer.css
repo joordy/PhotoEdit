@@ -22,3 +22,9 @@ footer nav ul li {
   line-height: 100%;
   vertical-align: middle;
 }
+
+@media (prefers-color-scheme: dark) {
+  footer {
+    background-color: var(--lightDarker);
+  }
+}

@@ -59,10 +59,17 @@ header p {
     justify-content: space-between;
   }
 
+  header h1 {
+    height: 64px;
+    line-height: 2em;
+  }
+
   header article {
     width: unset;
-    height: unset;
+    height: 64px;
     left: unset;
+    display: grid;
+    place-items: center;
   }
 
   header article input[type='text'] {
@@ -71,62 +78,17 @@ header p {
   }
 
   header article input[type='text']:focus-within {
-    width: 350px;
+    width: 50vw;
     transition: 0.5s;
+  }
+
+  header article button {
+    margin: auto;
+    top: 0;
+    bottom: 0;
   }
 
   header p {
     flex: 0 1 100%;
   }
-
-  /* header article {
-    display: flex;
-    justify-content: space-between;
-  }
-  header article div {
-    display: flex;
-    justify-content: flex-end;
-    width: 70%;
-  }
-  header article div input[type='text'] {
-    border-radius: 20px;
-    width: 100px;
-  }
-  
-  header article input[type='text']:focus-within {
-    width: 300px;
-    transition: 0.5s;
-  }
-  header article p {
-    flex: 0 1 100%;
-    display: inline-block;
-
-    width: 100%;
-  } */
-
-  /* header {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  header article {
-    display: flex;
-    justify-content: flex-end;
-    width: 70%;
-  }
-  header article input[type='text'] {
-    width: 100px;
-    position: relative;
-    right: 0;
-    transition: 0.5s;
-  }
-
-  header article input[type='text']:focus-within {
-    width: 100%;
-  }
-  header article p {
-    display: block;
-    width: 100%;
-  } */
-  /* header article button */
 }
