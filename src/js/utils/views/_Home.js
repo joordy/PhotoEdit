@@ -1,5 +1,4 @@
-import { checkDataSource } from '../data/checkDataSource'
-import { loadEdit, loadEditTwo } from '../data/eventData'
+import { loadButton, loadInput, fetchQuery } from '../data/index'
 import { addHeader, addMain, addImages } from '../components/index'
 
 export const homeView = (content, router) => {
@@ -9,14 +8,14 @@ export const homeView = (content, router) => {
     addHeader(content)
     addMain()
 
-    let data = await checkDataSource()
+    let data = await fetchQuery()
 
     // Event listener for search button
     let button = document.querySelector('#searchPhotos')
     button.addEventListener(
       'click',
       (data) => {
-        loadEdit(data, content).then((data = data))
+        loadButton(data, content).then((data = data))
       },
       false
     )
@@ -26,7 +25,7 @@ export const homeView = (content, router) => {
     input.addEventListener(
       'keyup',
       (data) => {
-        loadEditTwo(data, content).then((data = data))
+        loadInput(data, content).then((data = data))
       },
       false
     )

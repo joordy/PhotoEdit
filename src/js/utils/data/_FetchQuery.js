@@ -1,7 +1,7 @@
 import { getMyData, getVariable } from '../helpers/index'
 import { accessKey, globalUrl, searchUrl } from '../config/config'
 
-export const checkDataSource = async (query) => {
+export const fetchQuery = async (query) => {
   let data
 
   if (query === '' && getVariable() == true) {
