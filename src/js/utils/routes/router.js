@@ -1,18 +1,16 @@
 import Navigo from 'navigo'
-import { homeView } from '../views/home'
-import { detailedView } from '../views/detailed'
-import { errorView } from '../views/error'
+import { detailedView, homeView, errorView } from '../views/index'
 
 const router = new Navigo('/', false)
 
 export const Router = () => {
-  const body = document.querySelector('#app')
+  const body = document.getElementById('app')
 
   try {
     router
       .on({
         '/': homeView(body, router),
-        '/about': detailedView(body, router),
+        '/image/:id': detailedView(body, router),
         '/error': errorView(body, router),
       })
       .notFound(() => {

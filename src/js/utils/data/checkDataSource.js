@@ -1,26 +1,27 @@
+import { getMyData, getVariable } from '../helpers/index'
 import { accessKey, globalUrl, searchUrl } from '../config/config'
-import { getVariable } from '../helpers/htmlElements'
-import { getMyData } from '../helpers/fetcher'
-import { getImages, getQuery, deleteResults } from '../helpers/render'
 
 export const checkDataSource = async (query) => {
-  console.log('hallo')
-  if (query === '' && getVariable() == true) {
-    const data = await getMyData(`${globalUrl}${accessKey}&per_page=33`)
-    console.log(data)
-    let renderData = getImages(data)
-  } else if (getVariable() == true) {
-    const data = await getMyData(
-      `${searchUrl}${accessKey}&query=${query}&per_page=33`
-    )
-    console.log(query, data.results)
+  let data
 
-    let removeItems = deleteResults()
-    let renderQuery = getQuery(query)
-    let renderData = getImages(data.results)
+  if (query === '' && getVariable() == true) {
+    data = await getMyData(
+      `${globalUrl}${accessKey}&per_page=33&order_by=popular`
+    )
+    return await data
+  } else if (getVariable() == true) {
+    console.log(
+      `${searchUrl}${accessKey}&query=${query}&per_page=33&order_by=popular`
+    )
+
+    data = await getMyData(
+      `${searchUrl}${accessKey}&query=${query}&per_page=33&order_by=popular`
+    )
+    return await data.results
   } else if (getVariable() == false) {
-    const data = await getMyData(`${globalUrl}${accessKey}&per_page=33`)
-    console.log(query, data)
-    let renderData = getImages(data)
+    data = await getMyData(
+      `${globalUrl}${accessKey}&per_page=33&order_by=popular`
+    )
+    return await data
   }
 }
