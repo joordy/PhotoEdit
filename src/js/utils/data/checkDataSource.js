@@ -10,6 +10,10 @@ export const checkDataSource = async (query) => {
     )
     return await data
   } else if (getVariable() == true) {
+    console.log(
+      `${searchUrl}${accessKey}&query=${query}&per_page=33&order_by=popular`
+    )
+
     data = await getMyData(
       `${searchUrl}${accessKey}&query=${query}&per_page=33&order_by=popular`
     )
