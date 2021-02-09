@@ -1,22 +1,25 @@
-import { checkDataSource } from '../data/checkDataSource'
-import { loadEdit, loadEditTwo } from '../data/eventData'
-import { addHeader, addMain, addImages } from '../components/index'
+import { eventButton, eventInput, fetchQuery } from '../data/index'
+import { addHeader, addMain, addImages, addFooter } from '../components/index'
+import { main } from '../components/elements/_main'
 
 export const homeView = (content, router) => {
   return async () => {
+    console.log(content)
     // Adding Header
     content.setAttribute('class', 'homePage')
-    addHeader(content)
-    addMain()
+    let header = addHeader(content)
 
-    let data = await checkDataSource()
+    let mainEl = main('imageWrapper')
+    content.appendChild(mainEl)
+
+    let data = await fetchQuery()
 
     // Event listener for search button
     let button = document.querySelector('#searchPhotos')
     button.addEventListener(
       'click',
       (data) => {
-        loadEdit(data, content).then((data = data))
+        eventButton(data, content).then((data = data))
       },
       false
     )
@@ -26,7 +29,7 @@ export const homeView = (content, router) => {
     input.addEventListener(
       'keyup',
       (data) => {
-        loadEditTwo(data, content).then((data = data))
+        eventInput(data, content).then((data = data))
       },
       false
     )
@@ -34,6 +37,8 @@ export const homeView = (content, router) => {
     // Add images to main
     addImages(data)
 
+    // Add Footer
+    addFooter(content)
     // Soon to come, more html elements
   }
 }

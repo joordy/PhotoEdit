@@ -54,9 +54,12 @@
 
 <!-- - Source (n.d.) Writer, Source. Retrieved February 01, 2020, from weblink -->
 
+- https://unsplash.com/documentation
 - https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
 - https://github.com/krasimir/navigo
 - https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild
+
+- https://www.digitalocean.com/community/tutorials/html-preload-prefetch
 
 ---
 

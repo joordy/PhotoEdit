@@ -1,24 +1,26 @@
-import { checkDataSource } from '../data/checkDataSource'
+import { fetchQuery } from '../data/index'
 import { addImages } from '../components/index'
 import { setVariable, deleteResults } from '../helpers/index'
 
-export const loadEdit = async (data) => {
+export const eventButton = async (data) => {
   let query = document.querySelector('#searchElement').value
   setVariable(true)
-  data = await checkDataSource(query)
+  data = await fetchQuery(query)
   deleteResults()
   addImages(data)
   return data
 }
 
-export const loadEditTwo = async (data) => {
+export const eventInput = async (data) => {
   if (event.keyCode === 13) {
     let query = document.querySelector('#searchElement').value
     setVariable(true)
-    data = await checkDataSource(query)
+    data = await fetchQuery(query)
     deleteResults()
     addImages(data)
     return data
   }
   return data
 }
+
+export const applyFilter = () => {}
