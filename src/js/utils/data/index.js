@@ -1,6 +1,7 @@
 import { checkID } from './_SearchID'
 import { fetchQuery } from './_FetchQuery'
-import { loadButton } from './_Events'
-import { loadInput } from './_Events'
+import { eventButton } from './_Events'
+import { eventInput } from './_Events'
+import { applyFilter } from './_Events'
 
-export { checkID, fetchQuery, loadButton, loadInput }
+export { checkID, fetchQuery, eventButton, eventInput, applyFilter }

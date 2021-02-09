@@ -1,27 +1,26 @@
-import { getMyData, getVariable } from '../helpers/index'
+import { getMyData, getVariable, filterItems } from '../helpers/index'
 import { accessKey, globalUrl, searchUrl } from '../config/config'
 
 export const fetchQuery = async (query) => {
-  let data
+  let res
 
   if (query === '' && getVariable() == true) {
-    data = await getMyData(
+    res = await getMyData(
       `${globalUrl}${accessKey}&per_page=33&order_by=popular`
     )
+    let data = filterItems(res)
     return await data
   } else if (getVariable() == true) {
-    console.log(
+    res = await getMyData(
       `${searchUrl}${accessKey}&query=${query}&per_page=33&order_by=popular`
     )
-
-    data = await getMyData(
-      `${searchUrl}${accessKey}&query=${query}&per_page=33&order_by=popular`
-    )
-    return await data.results
+    let data = filterItems(res.results)
+    return await data
   } else if (getVariable() == false) {
-    data = await getMyData(
+    res = await getMyData(
       `${globalUrl}${accessKey}&per_page=33&order_by=popular`
     )
+    let data = filterItems(res)
     return await data
   }
 }

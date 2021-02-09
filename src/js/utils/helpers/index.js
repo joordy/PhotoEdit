@@ -4,7 +4,8 @@ import { clicked } from './_Elements'
 import { getMyData } from './_Fetcher'
 import { getQuery } from './_Render'
 import { deleteResults } from './_Render'
-import { uniqueFilter } from './_UniqueFilter'
+import { uniqueFilter } from './_Filters'
+import { filterItems } from './_Filters'
 
 export {
   setVariable,
@@ -14,4 +15,5 @@ export {
   getQuery,
   deleteResults,
   uniqueFilter,
+  filterItems,
 }

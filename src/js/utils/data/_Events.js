@@ -2,7 +2,7 @@ import { fetchQuery } from '../data/index'
 import { addImages } from '../components/index'
 import { setVariable, deleteResults } from '../helpers/index'
 
-export const loadButton = async (data) => {
+export const eventButton = async (data) => {
   let query = document.querySelector('#searchElement').value
   setVariable(true)
   data = await fetchQuery(query)
@@ -11,7 +11,7 @@ export const loadButton = async (data) => {
   return data
 }
 
-export const loadInput = async (data) => {
+export const eventInput = async (data) => {
   if (event.keyCode === 13) {
     let query = document.querySelector('#searchElement').value
     setVariable(true)
@@ -22,3 +22,5 @@ export const loadInput = async (data) => {
   }
   return data
 }
+
+export const applyFilter = () => {}

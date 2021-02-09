@@ -6,3 +6,14 @@ export const uniqueFilter = async () => {
   let image = await checkID(url)
   return image
 }
+
+export const filterItems = (data) => {
+  // console.log(data)
+  // return data.map(item => {
+  //   return {
+  //     alt_description: item.alt_description,
+
+  //   }
+  // })
+  return data
+}

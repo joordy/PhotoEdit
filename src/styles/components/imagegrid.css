@@ -14,7 +14,7 @@ main {
   grid-auto-rows: 250px;
 }
 
-#searchedImage {
+.searchedImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
