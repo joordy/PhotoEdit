@@ -1,6 +1,6 @@
-export const detailedView = (body, router) => {
+export const detailedView = (content, router) => {
   return async () => {
-    let content = document.getElementById('app')
+    content.setAttribute('class', 'detailPage')
     let element = document.createElement('h1')
     let textnode = document.createTextNode(`ABC`)
     element.appendChild(textnode)
