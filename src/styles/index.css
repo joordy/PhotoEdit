@@ -13,6 +13,7 @@
 
 @import './components/header.css';
 @import './components/imagegrid.css';
+@import './components/editor.css';
 @import './components/footer.css';
 
 * {

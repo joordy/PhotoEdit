@@ -1,21 +1,20 @@
-import { checkID } from '../data/index'
+import { docTitle } from '../components/index'
+import { headingOne, img } from '../components/elements/index'
+import { uniqueFilter } from '../helpers/index'
 
 export const detailedView = (content, router) => {
   return async () => {
-    let url = window.location.pathname
-    url = url.replace('/image/', '')
-    let image = await checkID(url)
-    console.log(image)
-
+    let title = docTitle('Editor | Unsplash Library — Jorrr')
     content.setAttribute('class', 'detailPage')
-    let element = document.createElement('h1')
-    let textnode = document.createTextNode(`ABC`)
-    element.appendChild(textnode)
+    let props = await uniqueFilter()
+    console.log(props)
+
+    // H1
+    let element = headingOne(props.description)
     content.appendChild(element)
 
-    let elem = document.createElement('img')
-    elem.setAttribute('id', 'searchedImage')
-    elem.src = image.urls.regular
+    // Image
+    let elem = img(props.urls.regular, 'pageImg')
     content.appendChild(elem)
   }
 }
