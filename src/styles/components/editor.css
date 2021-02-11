@@ -7,8 +7,12 @@
   object-fit: cover;
 }
 
-.detailPage article label::first-letter {
-  /* text-transform: uppercase;
-  font-size: 30px;
-  color: blue; */
+.detailPage article {
+}
+.detailPage article label {
+  display: block;
+}
+
+.detailPage article input[type='range'] {
+  width: 100%;
 }
