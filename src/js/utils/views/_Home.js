@@ -1,17 +1,18 @@
 import { eventButton, eventInput, fetchQuery } from '../data/index'
-import { addHeader, addMain, addImages, addFooter } from '../components/index'
+import { addHeader, addImages, addFooter } from '../components/index'
 import { main } from '../components/elements/_main'
 
 export const homeView = (content, router) => {
   return async () => {
-    console.log(content)
     // Adding Header
     content.setAttribute('class', 'homePage')
     let header = addHeader(content)
 
+    // Add main element
     let mainEl = main('imageWrapper')
     content.appendChild(mainEl)
 
+    // Fetch image data
     let data = await fetchQuery()
 
     // Event listener for search button
@@ -34,11 +35,10 @@ export const homeView = (content, router) => {
       false
     )
 
-    // Add images to main
+    // Add images to main section
     addImages(data)
 
-    // Add Footer
+    // Add Footer for future menu
     addFooter(content)
-    // Soon to come, more html elements
   }
 }

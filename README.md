@@ -10,7 +10,15 @@
 
 ---
 
-## 📄 Patterns
+## 📄 Actor Diagram
+
+![actor_diagram](https://user-images.githubusercontent.com/48051912/107691148-5f5bef00-6cab-11eb-9906-7a966f7bb333.png)
+
+---
+
+## Interaction Diagram
+
+![interaction_diagram](https://user-images.githubusercontent.com/48051912/107704954-57f21100-6cbe-11eb-88fd-ecce847f90b0.png)
 
 ---
 
@@ -48,6 +56,38 @@
 
 ## 📈 Datasets
 
+For this project I made use of the Unsplash API for Developers. The API gives access to the world largest open collection of high quality photos, totally free. With using different querys, like searching, popular, etc etc, the user can receive a lot of information about the image. All the available information contains:
+
+```json
+image = {
+  alt_description: // Second description
+  blur_hash: // Hashed ID
+  categories: // Image categories
+  color: // Color ?
+  created_at: // Created timestamp
+  current_user_collections: []
+  description: // Image description
+  downloads: // Total downloads
+  exif: // Camera Settings
+  height: // Image height in PX
+  id: // Image ID
+  liked_by_user: // Liked by user
+  likes: // Total likes
+  links: // Links to download information
+  location: // Location of image
+  meta: // Meta information
+  promoted_at: // Promoted timestamp
+  related_collections: // Related collections with this image
+  sponsorship: // Sponsored image
+  tags: // Image tags
+  updated_at: // Updated timestamp
+  urls: // All image URLS, thumbs, small, regular, full, raw
+  user: // Information about user
+  views: // Total image views
+  width: // Image width in PX
+}
+```
+
 ---
 
 ## 🔍 Sources
@@ -63,7 +103,9 @@
 
 ---
 
-## 💽 License
+## 🔐 License
+
+This is a repository which is licensed as MIT. Developed by Jordy Fronik ©️ 2021.
 
 ---
 

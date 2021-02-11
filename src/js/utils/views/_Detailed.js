@@ -1,35 +1,49 @@
-import { docTitle, addFilter } from '../components/index'
-import { headingOne, headingTwo, img } from '../components/elements/index'
+import {
+  docTitle,
+  addFilter,
+  drawCanvas,
+  saveElement,
+} from '../components/index'
+import {
+  addLink,
+  button,
+  headingOne,
+  headingTwo,
+} from '../components/elements/index'
 import { uniqueFilter } from '../helpers/index'
 
 export const detailedView = (content, router) => {
   return async () => {
-    let title = docTitle('Editor | Unsplash Library — Jorrr')
-    content.setAttribute('class', 'detailPage')
+    // Get Image details from clicked link
     let props = await uniqueFilter()
     console.log(props)
 
-    // H1
+    // Change doc title
+    let title = docTitle('Editor | Unsplash Library — Jorrr')
+
+    // Add Class to specific page, for styling unique content
+    content.setAttribute('class', 'detailPage')
+
+    // Add Button to home
+    let homeButton = addLink('/', 'Back')
+    content.appendChild(homeButton)
+    // Add Heading one
     let h1 = headingOne(props.description)
     content.appendChild(h1)
 
-    // H2
+    // Add Heading two
     let h2 = headingTwo(props.alt_description)
     content.appendChild(h2)
 
-    // Image
-    let elem = img(props.urls.regular, 'pageImg')
-    content.appendChild(elem)
+    // Add Canvas elements
+    let canvas = drawCanvas(content, props)
 
+    // Add all image filters
     let filter = addFilter(content)
-
-    let imageToEdit = document.querySelector('.pageImg')
+    let canvasToEdit = document.querySelector('.imageCanvas')
+    let imgToEdit = document.querySelector('.pageImg')
     let applyControls = document.querySelectorAll('input[type=range]')
     let applyFilters = document.querySelectorAll('#applyFilter')
-
-    console.log(applyControls)
-    console.log(applyFilters)
-
     applyFilters.forEach((item) => {
       item.addEventListener('change', function () {
         let computedFilters = ''
@@ -43,8 +57,24 @@ export const detailedView = (content, router) => {
             ') '
         })
         console.log(computedFilters)
-        imageToEdit.style.filter = computedFilters
+        canvasToEdit.style.filter = computedFilters
+        imgToEdit.style.filter = computedFilters
       })
+    })
+
+    let saveButton = button('Save')
+    content.appendChild(saveButton)
+
+    let bttn = document.querySelector('#saveImg')
+    console.log(bttn)
+
+    bttn.addEventListener('click', function () {
+      const downloadELement = document.createElement('a')
+      content.appendChild(downloadELement)
+      downloadELement.href = canvasToEdit.toDataURL()
+      downloadELement.download = 'downloaded_image.jpg'
+      downloadELement.click()
+      content.removeChild(downloadELement)
     })
   }
 }
