@@ -8,6 +8,7 @@ export const addImages = (data) => {
   data.forEach((item) => {
     // console.log(item)
     let tag = document.createElement('a')
+    tag.setAttribute('data-navigo', '')
     tag.href = `/image/${item.id}`
     tag.id = `href`
     tag.rel = 'prefetch'

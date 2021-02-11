@@ -10,7 +10,15 @@
 
 ---
 
-## 📄 Patterns
+## 📄 Actor Diagram
+
+![actor_diagram](https://user-images.githubusercontent.com/48051912/107691148-5f5bef00-6cab-11eb-9906-7a966f7bb333.png)
+
+---
+
+## Interaction Diagram
+
+![interaction_diagram](https://user-images.githubusercontent.com/48051912/107704954-57f21100-6cbe-11eb-88fd-ecce847f90b0.png)
 
 ---
 
@@ -95,7 +103,9 @@ image = {
 
 ---
 
-## 💽 License
+## 🔐 License
+
+This is a repository which is licensed as MIT. Developed by Jordy Fronik ©️ 2021.
 
 ---
 
