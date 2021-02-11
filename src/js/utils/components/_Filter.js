@@ -1,17 +1,7 @@
 import { article, inputSlider, label } from './elements/index'
 
 export const addFilter = (content) => {
-  // let filterOne = article()
-  // let labelEl = label('Blur ')
-  // let greyScale = inputSlider(Object.values(elements[0]))
-
-  // content.appendChild(filterOne)
-  // filterOne.appendChild(labelEl)
-  // filterOne.appendChild(greyScale)
-  // console.log(Object.values(elements[0]))
-
   elements.forEach((item) => {
-    // console.log(item)
     let filterOne = article()
     let labelEl = label(item.filter)
     let greyScale = inputSlider(Object.values(item))

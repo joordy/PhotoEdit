@@ -1,35 +1,35 @@
-import { docTitle, addFilter } from '../components/index'
-import { headingOne, headingTwo, img } from '../components/elements/index'
+import { docTitle, addFilter, drawCanvas } from '../components/index'
+import { headingOne, headingTwo } from '../components/elements/index'
 import { uniqueFilter } from '../helpers/index'
 
 export const detailedView = (content, router) => {
   return async () => {
-    let title = docTitle('Editor | Unsplash Library — Jorrr')
-    content.setAttribute('class', 'detailPage')
+    // Get Image details from clicked link
     let props = await uniqueFilter()
     console.log(props)
 
-    // H1
+    // Change doc title
+    let title = docTitle('Editor | Unsplash Library — Jorrr')
+
+    // Add Class to specific page, for styling unique content
+    content.setAttribute('class', 'detailPage')
+
+    // Add Heading one
     let h1 = headingOne(props.description)
     content.appendChild(h1)
 
-    // H2
+    // Add Heading two
     let h2 = headingTwo(props.alt_description)
     content.appendChild(h2)
 
-    // Image
-    let elem = img(props.urls.regular, 'pageImg')
-    content.appendChild(elem)
+    // Add Canvas elements
+    let canvas = drawCanvas(content, props)
 
+    // Add all image filters
     let filter = addFilter(content)
-
-    let imageToEdit = document.querySelector('.pageImg')
+    let imageToEdit = document.querySelector('.canvasTest')
     let applyControls = document.querySelectorAll('input[type=range]')
     let applyFilters = document.querySelectorAll('#applyFilter')
-
-    console.log(applyControls)
-    console.log(applyFilters)
-
     applyFilters.forEach((item) => {
       item.addEventListener('change', function () {
         let computedFilters = ''
