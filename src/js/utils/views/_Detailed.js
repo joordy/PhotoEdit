@@ -1,5 +1,15 @@
-import { docTitle, addFilter, drawCanvas } from '../components/index'
-import { headingOne, headingTwo } from '../components/elements/index'
+import {
+  docTitle,
+  addFilter,
+  drawCanvas,
+  saveElement,
+} from '../components/index'
+import {
+  addLink,
+  button,
+  headingOne,
+  headingTwo,
+} from '../components/elements/index'
 import { uniqueFilter } from '../helpers/index'
 
 export const detailedView = (content, router) => {
@@ -14,6 +24,9 @@ export const detailedView = (content, router) => {
     // Add Class to specific page, for styling unique content
     content.setAttribute('class', 'detailPage')
 
+    // Add Button to home
+    let homeButton = addLink('/', 'Back')
+    content.appendChild(homeButton)
     // Add Heading one
     let h1 = headingOne(props.description)
     content.appendChild(h1)
@@ -27,7 +40,8 @@ export const detailedView = (content, router) => {
 
     // Add all image filters
     let filter = addFilter(content)
-    let imageToEdit = document.querySelector('.canvasTest')
+    let canvasToEdit = document.querySelector('.imageCanvas')
+    let imgToEdit = document.querySelector('.pageImg')
     let applyControls = document.querySelectorAll('input[type=range]')
     let applyFilters = document.querySelectorAll('#applyFilter')
     applyFilters.forEach((item) => {
@@ -43,8 +57,24 @@ export const detailedView = (content, router) => {
             ') '
         })
         console.log(computedFilters)
-        imageToEdit.style.filter = computedFilters
+        canvasToEdit.style.filter = computedFilters
+        imgToEdit.style.filter = computedFilters
       })
+    })
+
+    let saveButton = button('Save')
+    content.appendChild(saveButton)
+
+    let bttn = document.querySelector('#saveImg')
+    console.log(bttn)
+
+    bttn.addEventListener('click', function () {
+      const downloadELement = document.createElement('a')
+      content.appendChild(downloadELement)
+      downloadELement.href = canvasToEdit.toDataURL()
+      downloadELement.download = 'downloaded_image.jpg'
+      downloadELement.click()
+      content.removeChild(downloadELement)
     })
   }
 }

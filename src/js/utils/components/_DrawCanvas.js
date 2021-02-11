@@ -6,6 +6,9 @@ export const drawCanvas = (content, props) => {
   content.appendChild(canvas)
   // Image
   let elem = img(props.urls.regular, 'pageImg')
+  elem.crossOrigin = 'Anonymous'
+  console.log(elem)
+
   canvas.appendChild(elem)
 
   addImageToCanvas(canvas, elem)
