@@ -5,6 +5,7 @@ import { addImages } from './_Images'
 import { addFooter } from './_Footer'
 import { addFilter } from './_Filter'
 import { drawCanvas } from './_DrawCanvas'
+import { drawImage } from './_drawImage'
 import { saveElement } from './_Save'
 
 export {
@@ -16,4 +17,5 @@ export {
   addFilter,
   drawCanvas,
   saveElement,
+  drawImage,
 }
