@@ -33,9 +33,8 @@ export const detailedView = (content, router) => {
     // Add Button to home
     let homeButton = addLink('/', 'Back')
     content.appendChild(homeButton)
-    // Add Heading one
-    let h1 = headingOne(props.description)
-    content.appendChild(h1)
+
+    const pageTitle = insertHeader(content, props)
 
     // Add Heading two
     let h2 = headingTwo(props.alt_description)
@@ -90,6 +89,17 @@ export const detailedView = (content, router) => {
   }
 }
 
+const insertHeader = (content, props) => {
+  if (!props.description) {
+    // Add Heading one of undefined
+    let h1 = headingOne('Title undefined')
+    content.appendChild(h1)
+  } else {
+    // Add Heading one
+    let h1 = headingOne(props.description)
+    content.appendChild(h1)
+  }
+}
 // html2canvas(document.querySelector('#export')).then((canvas) => {
 //   console.log(canvas)
 //   console.log(canvas.toDataURL('image/png'))
