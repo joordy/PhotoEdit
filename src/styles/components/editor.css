@@ -9,7 +9,14 @@
 .detailPage img {
   width: 100%;
   height: auto;
-  max-height: 300px;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.detailPage canvas {
+  width: 100%;
+  height: auto;
+  /* max-height: 500px; */
   object-fit: cover;
 }
 

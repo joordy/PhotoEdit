@@ -1,25 +1,20 @@
-// import { addCanvas, img } from './elements/index'
+import { addCanvas, img } from './elements/index'
 
-// export const drawCanvas = async (content, props) => {
-//   // Canvas
-//   const canvas = addCanvas('imageCanvas')
-//   content.appendChild(canvas)
+export const drawCanvas = async (content, props) => {
+  // Canvas
+  const canvas = addCanvas('imageCanvas')
+  canvas.width = props.width
+  canvas.height = props.height
 
-//   // Image
-//   const elem = img(props.urls.regular, 'pageImg')
-//   elem.crossOrigin = 'Anonymous'
-//   console.log(elem)
+  // canvas.setAttribute('crossorigin', 'anonymous')
+  content.appendChild(canvas)
 
-//   canvas.appendChild(elem)
+  const ctx = canvas.getContext('2d')
+  const imageObj = new Image()
+  imageObj.src = props.urls.full
+  imageObj.crossOrigin = 'Anonymous'
 
-//   let el = await addImageToCanvas(canvas, elem)
-// }
-
-// const addImageToCanvas = (canvas, image) => {
-//   const ctx = canvas.getContext('2d')
-
-//   canvas.width = image.width
-//   canvas.height = image.height
-
-//   ctx.drawImage(image, 0, 0)
-// }
+  imageObj.onload = function () {
+    ctx.drawImage(imageObj, 0, 0)
+  }
+}
