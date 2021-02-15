@@ -69,6 +69,15 @@ lorem ipsum -->
 
 The **components/** folder consists of all kinds of small elements in the elements / folder, which enable me to create HTML elements in JavaScript. Larger blocks of HTML are in the root of the **components/** folder.
 
+```js
+export const HeadingOne = (item) => {
+  let element = document.createElement('h1')
+  let textnode = document.createTextNode(item)
+  element.appendChild(textnode)
+  return element
+}
+```
+
 ### **Importing elements**
 
 To avoid having dozens of 'import' lines on the first lines of my javascript files, I created an index.js in every folder. This file imports all possible functions from the relevant folder, and ensures that I can import these functions in 1 line of code where necessary. It's a DRY way of importing all the needed functions and variables inside JavaScript.

@@ -1,5 +1,4 @@
-import html2canvas from 'html2canvas'
-// import { saveAs } from 'file-saver'
+// import html2canvas from 'html2canvas'
 import { createFilter, createCanvas } from '../components/index'
 import {
   Href,
@@ -45,8 +44,7 @@ export const detailedView = (content, router) => {
     main.appendChild(filters)
 
     // Add all image filters
-    const canVas = document.querySelector('.imageCanvas')
-    // let imgToEdit = document.querySelector('.pageImg')
+    const CanVas = document.querySelector('.imageCanvas')
     let applyControls = document.querySelectorAll('input[type=range]')
     let applyFilters = document.querySelectorAll('#applyFilter')
     applyFilters.forEach((item) => {
@@ -62,23 +60,24 @@ export const detailedView = (content, router) => {
             ') '
         })
         console.log(computedFilters)
-        // imgToEdit.style.filter = computedFilters
-        canVas.style.filter = computedFilters
+        CanVas.style.filter = computedFilters
       })
     })
 
     const bttn = document.querySelector('#saveImg')
 
     bttn.addEventListener('click', function () {
-      console.log('screenshot')
-      // const myCanvas = document.querySelector('.imageCanvas')
-      // myCanvas.toBlob(function (blob) {
-      //   saveAs(blob, 'pretty image.png')
+      const downloadElement = document.createElement('a')
+      content.appendChild(downloadElement)
+      downloadElement.href = CanVas.toDataURL()
+      downloadElement.download = 'downloaded_image_jorrr.dev.jpg'
+      downloadElement.click()
+      content.removeChild(downloadElement)
+      // html2canvas(document.querySelector('#export')).then((canvas) => {
+      //   console.log(canvas)
+      //   console.log(canvas.toDataURL('image/png'))
+      //   document.body.appendChild(canvas)
       // })
-      html2canvas(document.querySelector('.imageCanvas')).then((canvas) => {
-        console.log(canvas)
-        document.body.appendChild(canvas)
-      })
     })
   }
 }
@@ -92,46 +91,3 @@ const insertHeader = (props) => {
     return h1
   }
 }
-// html2canvas(document.querySelector('#export')).then((canvas) => {
-//   console.log(canvas)
-//   console.log(canvas.toDataURL('image/png'))
-//   document.body.appendChild(canvas)
-// })
-// // Add all image filters
-// let filter = addFilter(content)
-// let canvasToEdit = document.querySelector('.imageCanvas')
-// let imgToEdit = document.querySelector('.pageImg')
-// let applyControls = document.querySelectorAll('input[type=range]')
-// let applyFilters = document.querySelectorAll('#applyFilter')
-// applyFilters.forEach((item) => {
-//   item.addEventListener('change', function () {
-//     let computedFilters = ''
-
-//     applyControls.forEach((elem) => {
-//       computedFilters +=
-//         elem.getAttribute('data-filter') +
-//         '(' +
-//         elem.value +
-//         elem.getAttribute('data-scale') +
-//         ') '
-//     })
-//     console.log(computedFilters)
-//     canvasToEdit.style.filter = computedFilters
-//     imgToEdit.style.filter = computedFilters
-//   })
-// })
-
-// let saveButton = button('Save')
-// content.appendChild(saveButton)
-
-// let bttn = document.querySelector('#saveImg')
-// console.log(bttn)
-
-// bttn.addEventListener('click', function () {
-//   const downloadELement = document.createElement('a')
-//   content.appendChild(downloadELement)
-//   downloadELement.href = canvasToEdit.toDataURL()
-//   downloadELement.download = 'downloaded_image.jpg'
-//   downloadELement.click()
-//   content.removeChild(downloadELement)
-// })
