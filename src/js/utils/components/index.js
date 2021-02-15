@@ -5,6 +5,7 @@ import { createImage } from './_createImage'
 import { createImg } from './_createImg'
 import { createMain } from './_createMain'
 import { createSave } from './_createSave'
+import { createInfo } from './_createInfo'
 import { createSearchHeader } from './_createSearch'
 
 export {
@@ -15,5 +16,6 @@ export {
   createImage,
   createMain,
   createSave,
+  createInfo,
   createSearchHeader,
 }

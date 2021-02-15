@@ -10,13 +10,13 @@ header h1 {
   margin: 0 0 0.5em 0;
 }
 
-header article {
+#searchHeader article {
   width: calc(100%);
   position: relative;
   height: 40px;
 }
 
-header article input[type='text'] {
+#searchHeader article input[type='text'] {
   width: 100%;
   padding: 5px 10px 5px 1em;
   height: 3em;
@@ -27,13 +27,13 @@ header article input[type='text'] {
   right: 0;
 }
 
-header article input[type='text']:focus {
+#searchHeader article input[type='text']:focus {
   border-radius: 1.5em;
   outline: none;
   border: 1.5px solid orange;
 }
 
-header article button {
+#searchHeader article button {
   position: absolute;
   top: 0;
   right: 0;
@@ -44,14 +44,14 @@ header article button {
   border: none;
 }
 
-header article button::before {
+#searchHeader article button::before {
   content: '\f002';
   font-family: 'FontAwesome';
   font-size: var(--h2);
   padding: 1em 0.7em;
 }
 
-header article button:focus {
+#searchHeader article button:focus {
   border-radius: 1.5em;
   outline: none;
   border: 1.5px solid orange;
@@ -109,12 +109,14 @@ header p {
 
 .detailPage header {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   width: 100%;
+  position: relative;
 }
 
 .detailPage header a {
+  flex: 1;
   color: var(--softWhite);
   text-decoration: none;
   display: flex;
@@ -130,18 +132,106 @@ header p {
   font-size: 24px;
   padding-top: -4px;
 }
-.detailPage header h1,
-.detailPage header h2 {
+
+/****
+  Buttons
+****/
+
+/* #imgInfo article {
   display: none;
+} */
+
+#fileInfo,
+#imgInfo {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  margin-left: 0.5rem;
 }
 
-.detailPage header button {
-  height: 40px;
-  position: relative;
-  color: transparent;
-  font-size: 1rem;
+#fileInfo:before {
+  color: black;
+  font-family: FontAwesome;
+  content: '\f019';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
-.detailPage header button:before {
+
+#fileInfo article {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 70vw;
+  background-color: white;
+  flex-wrap: wrap;
+  flex-direction: column;
+  display: none;
+  transition: 0.3s ease;
+}
+
+#fileInfo .openFileElement {
+  display: flex !important;
+}
+
+#fileInfo article button {
+  width: 100%;
+}
+
+#fileInfo article button:nth-child(1):before {
+  content: '';
+}
+
+#fileInfo article button:nth-child(2):before {
+  content: '';
+}
+
+#imgInfo:before {
+  color: black;
+  font-family: FontAwesome;
+  content: '\f129';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#imgInfo article {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 70vw;
+  background-color: white;
+  flex-wrap: wrap;
+  flex-direction: column;
+  display: none;
+  color: black;
+  transition: 0.3s ease;
+}
+
+#imgInfo .openImgElement {
+  display: flex !important;
+}
+/* 
+
+.detailPage
+.detailPage
+
+.detailPage 
+.detailPage  */
+
+/* .detailPage #fileInfo 
+.detailPage #fileInfo  */
+/* 
+.detailPage header div:nth-child(2)
+.detailPage header div:nth-child(2) 
+.detailPage header div:nth-child(2) 
+.detailPage header div:nth-child(2) 
+.detailPage header div:nth-child(2) a */
+/* .detailPage header div:before {
   color: black;
   font-family: FontAwesome;
   content: '\f019';
@@ -149,3 +239,18 @@ header p {
   left: 50%;
   transform: translateX(-50%);
 }
+
+.detailPage header div button {
+  height: 40px;
+  position: relative;
+  color: transparent;
+  font-size: 1rem;
+}
+.detailPage header div button:nth-child(1):before {
+  color: black;
+  font-family: FontAwesome;
+  content: '\f019';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+} */

@@ -18,7 +18,7 @@ export function getVariable() {
 export const getQuery = (writtenQuery) => {
   let searchQuery = document.querySelector('#searchQuery')
   searchQuery.innerHTML = `Zoekterm: ${writtenQuery}`
-  console.log(`Searched with the Query: ${writtenQuery}`)
+  // console.log(`Searched with the Query: ${writtenQuery}`)
 }
 
 // Deletes previous searched images

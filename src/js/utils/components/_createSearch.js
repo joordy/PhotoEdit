@@ -1,26 +1,23 @@
-export const createSearchHeader = (content) => {
-  const element = document.createElement('header')
-  // Heading One
-  const headingOne = document.createElement('h1')
-  const headingText = document.createTextNode('Discover')
-  content.appendChild(element)
-  element.appendChild(headingOne)
-  headingOne.appendChild(headingText)
-  // Article + input and button
-  const article = document.createElement('article')
-  // Input
+import { Article, Header, HeadingOne } from './elements/index'
+
+export const createSearchHeader = (body) => {
+  const header = Header('searchHeader')
+  const h1 = HeadingOne('Discover')
+  const article = Article()
   const input = document.createElement('input')
+  const button = document.createElement('button')
+  const searchQuery = document.createElement('p')
+
   input.setAttribute('type', 'text')
   input.setAttribute('id', 'searchElement')
   input.setAttribute('placeholder', `Search free photo's`)
-  // Button
-  const button = document.createElement('button')
   button.setAttribute('id', 'searchPhotos')
-  element.appendChild(article)
+  searchQuery.setAttribute('id', 'searchQuery')
+
+  body.appendChild(header)
+  header.appendChild(h1)
+  header.appendChild(article)
+  article.appendChild(searchQuery)
   article.appendChild(input)
   article.appendChild(button)
-  // Search query in P
-  const searchQuery = document.createElement('p')
-  searchQuery.setAttribute('id', 'searchQuery')
-  article.appendChild(searchQuery)
 }

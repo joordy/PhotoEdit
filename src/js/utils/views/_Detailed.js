@@ -1,5 +1,4 @@
 // import html2canvas from 'html2canvas'
-import { createFilter, createCanvas } from '../components/index'
 import {
   Href,
   Button,
@@ -9,37 +8,40 @@ import {
   Header,
   Main,
 } from '../components/elements/index'
+import {
+  createFilter,
+  createSave,
+  createCanvas,
+  createInfo,
+} from '../components/index'
 import { uniqueFilter } from '../helpers/index'
 
-export const detailedView = (content, router) => {
+export const detailedView = (body) => {
   return async () => {
+    // Add Class to specific page, for styling unique content
+    body.setAttribute('class', 'detailPage')
     // Get Image details from clicked link
     const props = await uniqueFilter()
 
+    console.log(props)
     // Change doc title
-    let title = docTitle('Editor | Unsplash Library — Jorrr')
-
-    // Add Class to specific page, for styling unique content
-    content.setAttribute('class', 'detailPage')
+    const pageTitle = docTitle('Editor | Unsplash Library — Jor')
 
     // Add Insert HTML Elements
     const header = Header('detailHeader')
     const main = Main('detailMain')
     const homeButton = Href('/', 'Back')
-    const h1 = insertHeader(props)
-    const h2 = HeadingTwo(props.alt_description)
     const imgCanvas = await createCanvas(props)
-    const filters = createFilter(content)
-    const saveButton = Button('Save')
+    const filters = createFilter(body)
+    const info = createInfo(props)
+    const save = createSave(props)
 
     // Append elements to the body element
-    content.appendChild(header)
-    content.appendChild(main)
+    body.appendChild(header)
     header.appendChild(homeButton)
-    header.appendChild(h1)
-    header.appendChild(h2)
-    header.appendChild(saveButton)
-
+    header.appendChild(info)
+    header.appendChild(save)
+    body.appendChild(main)
     main.appendChild(imgCanvas)
     main.appendChild(filters)
 
@@ -59,35 +61,64 @@ export const detailedView = (content, router) => {
             elem.getAttribute('data-scale') +
             ') '
         })
-        console.log(computedFilters)
+        // console.log(computedFilters)
         CanVas.style.filter = computedFilters
       })
     })
 
-    const bttn = document.querySelector('#saveImg')
+    const downloadBtn = document.querySelector('#downloadImg')
+    const saveBtn = document.querySelector('#saveImg')
+    const fileBtn = document.querySelector('#fileInfo')
+    const imgBtn = document.querySelector('#imgInfo')
 
-    bttn.addEventListener('click', function () {
+    downloadBtn.addEventListener('click', (e) => {
       const downloadElement = document.createElement('a')
-      content.appendChild(downloadElement)
+      body.appendChild(downloadElement)
       downloadElement.href = CanVas.toDataURL()
-      downloadElement.download = 'downloaded_image_jorrr.dev.jpg'
+      downloadElement.download = 'downloaded_image_jorDev.jpg'
       downloadElement.click()
-      content.removeChild(downloadElement)
-      // html2canvas(document.querySelector('#export')).then((canvas) => {
-      //   console.log(canvas)
-      //   console.log(canvas.toDataURL('image/png'))
-      //   document.body.appendChild(canvas)
-      // })
+      body.removeChild(downloadElement)
+    })
+
+    saveBtn.addEventListener('click', (e) => {
+      let data = []
+      data.push(props)
+      localStorage.setItem('savedImg', JSON.stringify(data))
+    })
+
+    fileBtn.addEventListener('click', (e) => {
+      const article = document.querySelector('#saveInfo')
+      article.classList.toggle('openFileElement')
+    })
+    imgBtn.addEventListener('click', (e) => {
+      const article = document.querySelector('#imageInfo')
+      article.classList.toggle('openImgElement')
     })
   }
 }
 
-const insertHeader = (props) => {
-  if (!props.description) {
-    let h1 = HeadingOne('Unknown Title')
-    return h1
-  } else {
-    let h1 = HeadingOne(props.description)
-    return h1
-  }
-}
+// const insertHeader = (props) => {
+//   if (!props.description) {
+//     let h1 = HeadingOne('Unknown Title')
+//     return h1
+//   } else {
+//     let h1 = HeadingOne(props.description)
+//     return h1
+//   }
+// }
+
+// const bttn = document.querySelector('#downloadImg')
+
+// bttn.addEventListener('click', function () {
+//   const downloadElement = document.createElement('a')
+//   body.appendChild(downloadElement)
+//   downloadElement.href = CanVas.toDataURL()
+//   downloadElement.download = 'downloaded_image_jorDev.jpg'
+//   downloadElement.click()
+//   body.removeChild(downloadElement)
+//   // html2canvas(document.querySelector('#export')).then((canvas) => {
+//   //   console.log(canvas)
+//   //   console.log(canvas.toDataURL('image/png'))
+//   //   document.body.appendChild(canvas)
+//   // })
+// })
