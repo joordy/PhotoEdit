@@ -4,17 +4,22 @@
   --primary: #000;
   --secondary: #eeeeef;
   --lightDarker: #3f3e3e;
-  --lightDark: #333;
-  --white: #fff;
-  --fontsize: 1em;
+  --dark: #202020;
+  --softDark: #333;
+  --softWhite: #fdfdfd;
+  --softGreen: #03dac5;
+  --fontsize: 16px;
   --fullwidth: 100%;
   --h2: 1.5em;
 }
 
 @import './components/header.css';
+@import './components/main.css';
+@import './components/footer.css';
+/* @import './components/header.css';
 @import './components/imagegrid.css';
 @import './components/editor.css';
-@import './components/footer.css';
+@import './components/footer.css'; */
 
 * {
   box-sizing: border-box;
@@ -25,8 +30,8 @@
 }
 
 html {
-  background: var(--secondary);
-  color: var(--primary);
+  background: var(--dark);
+  color: var(--softWhite);
   font-size: var(--fontsize);
 }
 
@@ -46,12 +51,5 @@ body {
   body {
     margin: 1em 4em;
     min-height: calc(100vh - 8em);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    background: var(--lightDarker);
-    color: var(--secondary);
   }
 }

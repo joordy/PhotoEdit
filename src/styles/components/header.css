@@ -1,11 +1,19 @@
+/*************************************
+            Homepage 
+**************************************/
+
+header {
+  margin-bottom: 1em;
+}
+
 header h1 {
   margin: 0 0 0.5em 0;
 }
 
 header article {
   width: calc(100%);
-  /* position: relative; */
-  left: 0;
+  position: relative;
+  height: 40px;
 }
 
 header article input[type='text'] {
@@ -15,7 +23,8 @@ header article input[type='text'] {
   border: none;
   border: 1px solid grey;
   border-radius: 1.5em;
-  position: relative;
+  position: absolute;
+  right: 0;
 }
 
 header article input[type='text']:focus {
@@ -50,15 +59,6 @@ header article button:focus {
 
 header p {
   margin: 1em 0;
-}
-
-.detailPage header {
-  width: 100%;
-  display: unset;
-}
-.detailPage header h1 {
-  height: unset;
-  line-height: unset;
 }
 
 @media screen and (min-width: 600px) {
@@ -101,4 +101,51 @@ header p {
   header p {
     flex: 0 1 100%;
   }
+}
+
+/*************************************
+            Editor page 
+**************************************/
+
+.detailPage header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.detailPage header a {
+  color: var(--softWhite);
+  text-decoration: none;
+  display: flex;
+  line-height: 2rem;
+  margin: 0.5em 0;
+}
+
+.detailPage header a:before {
+  font-family: FontAwesome;
+  content: '\f0a8';
+  display: block;
+  margin-right: 1em;
+  font-size: 24px;
+  padding-top: -4px;
+}
+.detailPage header h1,
+.detailPage header h2 {
+  display: none;
+}
+
+.detailPage header button {
+  height: 40px;
+  position: relative;
+  color: transparent;
+  font-size: 1rem;
+}
+.detailPage header button:before {
+  color: black;
+  font-family: FontAwesome;
+  content: '\f019';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
