@@ -6,14 +6,14 @@ import {
 } from '../components/index'
 import { Main } from '../components/elements/_main'
 
-export const homeView = (content, router) => {
+export const homeView = (body) => {
   return async () => {
-    const header = createSearchHeader(content)
+    const header = createSearchHeader(body)
     const mainEl = Main('imageWrapper')
 
     // Adding Header and main element
-    content.setAttribute('class', 'homePage')
-    content.appendChild(mainEl)
+    body.setAttribute('class', 'homePage')
+    body.appendChild(mainEl)
 
     // Fetch image data for events
     const data = await fetchQuery()
@@ -23,7 +23,7 @@ export const homeView = (content, router) => {
     button.addEventListener(
       'click',
       (data) => {
-        userInput(data, content).then((data = data))
+        userInput(data, body).then((data = data))
       },
       false
     )
@@ -31,13 +31,13 @@ export const homeView = (content, router) => {
     input.addEventListener(
       'keyup',
       (data) => {
-        userInput(data, content).then((data = data))
+        userInput(data, body).then((data = data))
       },
       false
     )
 
     // Add images to main section and footer to the page
     createImg(data)
-    createFooter(content)
+    createFooter(body)
   }
 }

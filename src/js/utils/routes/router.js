@@ -9,10 +9,10 @@ export const Router = () => {
   try {
     router
       .on({
-        '/': homeView(body, router),
-        '/image/:id': detailedView(body, router),
-        '/profile': profileView(body, router),
-        '/error': errorView(body, router),
+        '/': homeView(body),
+        '/image/:id': detailedView(body),
+        '/profile': profileView(body),
+        '/error': errorView(body),
       })
       .notFound(() => {
         console.error('404...')

@@ -14,3 +14,20 @@
 //   // // return element
 //   console.log('hi')
 // }
+
+import { Article, Button, Div } from './elements/index'
+
+export const createSave = (props) => {
+  const div = Div()
+  const article = Article()
+  const download = Button('Download image', 'downloadImg')
+  const save = Button('Save to profile', 'saveImg')
+
+  div.setAttribute('id', 'fileInfo')
+  div.appendChild(article)
+  article.appendChild(download)
+  article.appendChild(save)
+  article.setAttribute('id', 'saveInfo')
+
+  return div
+}
