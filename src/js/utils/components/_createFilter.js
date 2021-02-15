@@ -19,5 +19,17 @@ export const createFilter = (content) => {
     div.appendChild(inputRange)
   })
 
+  const elements = Array.from(section.childNodes)
+  elements.forEach((targetDetail) => {
+    targetDetail.addEventListener('click', () => {
+      // Close all the details that are not targetDetail.
+      elements.forEach((detail) => {
+        if (detail !== targetDetail) {
+          detail.removeAttribute('open')
+        }
+      })
+    })
+  })
+
   return section
 }

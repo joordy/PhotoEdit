@@ -22,7 +22,6 @@ export const detailedView = (content, router) => {
 
     // Add Class to specific page, for styling unique content
     content.setAttribute('class', 'detailPage')
-    content.setAttribute('id', 'capture')
 
     // Add Insert HTML Elements
     const header = Header('detailHeader')
@@ -39,10 +38,11 @@ export const detailedView = (content, router) => {
     content.appendChild(main)
     header.appendChild(homeButton)
     header.appendChild(h1)
-    main.appendChild(h2)
+    header.appendChild(h2)
+    header.appendChild(saveButton)
+
     main.appendChild(imgCanvas)
     main.appendChild(filters)
-    main.appendChild(saveButton)
 
     // Add all image filters
     const canVas = document.querySelector('.imageCanvas')

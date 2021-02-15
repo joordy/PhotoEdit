@@ -1,4 +1,5 @@
 import { docTitle } from '../components/elements/index'
+
 export const errorView = (body, router) => {
   return async () => {
     // Change doc title
