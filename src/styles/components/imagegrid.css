@@ -1,4 +1,4 @@
-main {
+#imageWrapper {
   background-color: var(--white);
   position: relative;
   width: calc(100% + 2em);
@@ -21,7 +21,7 @@ main {
 }
 
 @media screen and (min-width: 600px) {
-  main {
+  #imageWrapper {
     padding: 32px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 16px;
@@ -29,7 +29,7 @@ main {
 }
 
 @media screen and (min-width: 1200px) {
-  main {
+  #imageWrapper {
     padding: 32px 48px;
     grid-gap: 32px;
   }
@@ -40,7 +40,7 @@ main {
 **************************************/
 
 @media (prefers-color-scheme: dark) {
-  main {
+  #imageWrapper {
     background-color: var(--lightDark);
   }
 }

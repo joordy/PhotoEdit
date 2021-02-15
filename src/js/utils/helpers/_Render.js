@@ -11,7 +11,6 @@ export const deleteResults = () => {
 
   console.log(element)
   if (element.hasChildNodes()) {
-    console.log(true)
     let allElements = Array.from(element.childNodes)
     element.removeChild(element.childNodes[0])
     allElements.forEach((item) => {

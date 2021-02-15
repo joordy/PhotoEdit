@@ -1,14 +1,15 @@
-.detailPage img {
+/* .detailPage img {
   width: 100%;
   height: auto;
   max-height: 400px;
   object-fit: cover;
-}
+} */
 
-.detailPage canvas {
-  width: 100%;
+.detailPage main canvas {
+  width: clamp(75vw, 80vw, 1000px);
   height: auto;
-  object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
 
 /* details {

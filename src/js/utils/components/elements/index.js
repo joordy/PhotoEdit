@@ -1,23 +1,27 @@
-import { article } from './_article'
-import { addCanvas } from './_canvas'
-import { button } from './_button'
+import { Article } from './_article'
+import { Canvas } from './_canvas'
+import { Button } from './_button'
 import { docTitle } from './_docTitle'
-import { headingOne } from './_h1'
-import { headingTwo } from './_h2'
-import { addLink } from './_href'
-import { img } from './_img'
+import { Header } from './_header'
+import { HeadingOne } from './_h1'
+import { HeadingTwo } from './_h2'
+import { Href } from './_href'
+import { Image } from './_img'
 import { inputSlider } from './_slider'
-import { label } from './_label'
+import { Label } from './_label'
+import { Main } from './_main'
 
 export {
-  addLink,
-  article,
-  addCanvas,
-  button,
+  Href,
+  Article,
+  Canvas,
+  Button,
   docTitle,
-  headingOne,
-  headingTwo,
-  img,
+  HeadingOne,
+  HeadingTwo,
+  Header,
+  Image,
   inputSlider,
-  label,
+  Label,
+  Main,
 }

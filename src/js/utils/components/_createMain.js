@@ -3,6 +3,6 @@ export const createMain = () => {
   const content = document.getElementById('app')
   const element = document.createElement('main')
 
-  element.setAttribute('id', 'imageWrapper')
+  element.setAttribute('className', 'imageWrapper')
   content.appendChild(element)
 }

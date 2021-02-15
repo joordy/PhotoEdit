@@ -1,4 +1,4 @@
-export const addLink = (link, item) => {
+export const Href = (link, item) => {
   let element = document.createElement('a')
   let textnode = document.createTextNode(item)
 

@@ -1,4 +1,4 @@
-import { img } from './elements/index'
+import { Image } from './elements/index'
 
 export const createImg = (data) => {
   const element = document.querySelector('#imageWrapper')
@@ -11,7 +11,7 @@ export const createImg = (data) => {
     tag.id = `href`
     tag.rel = 'prefetch'
 
-    const image = img(item.urls.regular, 'searchedImage')
+    const image = Image(item.urls.regular, 'searchedImage')
 
     tag.appendChild(image)
     element.appendChild(tag)

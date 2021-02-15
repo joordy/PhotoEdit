@@ -51,6 +51,15 @@ header p {
   margin: 1em 0;
 }
 
+.detailPage header {
+  width: 100%;
+  display: unset;
+}
+.detailPage header h1 {
+  height: unset;
+  line-height: unset;
+}
+
 @media screen and (min-width: 600px) {
   header {
     display: flex;

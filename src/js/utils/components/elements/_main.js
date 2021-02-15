@@ -1,6 +1,6 @@
-export const main = (className) => {
+export const Main = (className) => {
   // Create Main
-  let main = document.createElement('main')
-  main.setAttribute('id', className)
-  return main
+  let element = document.createElement('main')
+  element.setAttribute('id', className)
+  return element
 }

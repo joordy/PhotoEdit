@@ -1,12 +1,12 @@
-import { addCanvas, img } from './elements/index'
+import { Canvas, img } from './elements/index'
 
-export const createCanvas = async (content, props) => {
+export const createCanvas = async (props) => {
   // Canvas
-  const canvas = addCanvas('imageCanvas')
+  const canvas = Canvas('imageCanvas')
   canvas.width = props.width
   canvas.height = props.height
 
-  content.appendChild(canvas)
+  // content.appendChild(canvas)
 
   const ctx = canvas.getContext('2d')
   const imageObj = new Image()
@@ -17,4 +17,6 @@ export const createCanvas = async (content, props) => {
   imageObj.onload = function () {
     ctx.drawImage(imageObj, 0, 0)
   }
+
+  return canvas
 }

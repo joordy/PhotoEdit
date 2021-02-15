@@ -2,12 +2,13 @@ import html2canvas from 'html2canvas'
 // import { saveAs } from 'file-saver'
 import { createFilter, createCanvas } from '../components/index'
 import {
-  addLink,
-  button,
+  Href,
+  Button,
   docTitle,
-  headingOne,
-  headingTwo,
-  img,
+  HeadingOne,
+  HeadingTwo,
+  Header,
+  Main,
 } from '../components/elements/index'
 import { uniqueFilter } from '../helpers/index'
 
@@ -23,24 +24,27 @@ export const detailedView = (content, router) => {
     content.setAttribute('class', 'detailPage')
     content.setAttribute('id', 'capture')
 
-    // Add Button to home
-    const homeButton = addLink('/', 'Back')
-    content.appendChild(homeButton)
+    // Add Insert HTML Elements
+    const header = Header('detailHeader')
+    const main = Main('detailMain')
+    const homeButton = Href('/', 'Back')
+    const h1 = insertHeader(props)
+    const h2 = HeadingTwo(props.alt_description)
+    const imgCanvas = await createCanvas(props)
+    const filters = createFilter(content)
+    const saveButton = Button('Save')
 
-    const pageTitle = insertHeader(content, props)
-
-    // Add Heading two
-    const h2 = headingTwo(props.alt_description)
-    content.appendChild(h2)
-
-    // Add Image elements
-    // let insertedImg = img(props.urls.regular, 'pageImg')
-    // content.appendChild(insertedImg)
-    // Add Canvas elements
-    const img = createCanvas(content, props)
+    // Append elements to the body element
+    content.appendChild(header)
+    content.appendChild(main)
+    header.appendChild(homeButton)
+    header.appendChild(h1)
+    main.appendChild(h2)
+    main.appendChild(imgCanvas)
+    main.appendChild(filters)
+    main.appendChild(saveButton)
 
     // Add all image filters
-    const filter = createFilter(content)
     const canVas = document.querySelector('.imageCanvas')
     // let imgToEdit = document.querySelector('.pageImg')
     let applyControls = document.querySelectorAll('input[type=range]')
@@ -63,9 +67,6 @@ export const detailedView = (content, router) => {
       })
     })
 
-    const saveButton = button('Save')
-    content.appendChild(saveButton)
-
     const bttn = document.querySelector('#saveImg')
 
     bttn.addEventListener('click', function () {
@@ -82,15 +83,13 @@ export const detailedView = (content, router) => {
   }
 }
 
-const insertHeader = (content, props) => {
+const insertHeader = (props) => {
   if (!props.description) {
-    // Add Heading one of undefined
-    let h1 = headingOne('Title undefined')
-    content.appendChild(h1)
+    let h1 = HeadingOne('Unknown Title')
+    return h1
   } else {
-    // Add Heading one
-    let h1 = headingOne(props.description)
-    content.appendChild(h1)
+    let h1 = HeadingOne(props.description)
+    return h1
   }
 }
 // html2canvas(document.querySelector('#export')).then((canvas) => {

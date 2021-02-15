@@ -1,11 +1,15 @@
-import { eventButton, eventInput, fetchQuery } from '../data/index'
-import { createHeader, createImg, createFooter } from '../components/index'
-import { main } from '../components/elements/_main'
+import { eventButton, userInput, fetchQuery } from '../data/index'
+import {
+  createSearchHeader,
+  createImg,
+  createFooter,
+} from '../components/index'
+import { Main } from '../components/elements/_main'
 
 export const homeView = (content, router) => {
   return async () => {
-    const header = createHeader(content)
-    const mainEl = main('imageWrapper')
+    const header = createSearchHeader(content)
+    const mainEl = Main('imageWrapper')
 
     // Adding Header and main element
     content.setAttribute('class', 'homePage')
@@ -19,7 +23,7 @@ export const homeView = (content, router) => {
     button.addEventListener(
       'click',
       (data) => {
-        eventButton(data, content).then((data = data))
+        userInput(data, content).then((data = data))
       },
       false
     )
@@ -27,7 +31,7 @@ export const homeView = (content, router) => {
     input.addEventListener(
       'keyup',
       (data) => {
-        eventInput(data, content).then((data = data))
+        userInput(data, content).then((data = data))
       },
       false
     )

@@ -1,4 +1,4 @@
-export const createHeader = (content) => {
+export const createSearchHeader = (content) => {
   const element = document.createElement('header')
   // Heading One
   const headingOne = document.createElement('h1')
@@ -23,18 +23,4 @@ export const createHeader = (content) => {
   const searchQuery = document.createElement('p')
   searchQuery.setAttribute('id', 'searchQuery')
   article.appendChild(searchQuery)
-  // return (content.innerHTML = `
-  //   <header>
-  //     <h1>Discover</h1>
-  //     <article>
-  //       <input
-  //         type="text"
-  //         id="searchElement"
-  //         placeholder="Search free photo's"
-  //       />
-  //       <button id="searchPhotos"></button>
-  //     </article>
-  //     <p id="searchQuery"></p>
-  //   </header>
-  // `)
 }

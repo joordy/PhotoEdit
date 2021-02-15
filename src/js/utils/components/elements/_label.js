@@ -1,4 +1,4 @@
-export const label = (labelText) => {
+export const Label = (labelText) => {
   let label = document.createElement('label')
   let textNode = document.createTextNode(labelText)
 

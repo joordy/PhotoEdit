@@ -1,4 +1,4 @@
-import { article, inputSlider, label } from './elements/index'
+import { inputSlider, Label } from './elements/index'
 import { filterElements } from '../helpers/_Elements'
 
 export const createFilter = (content) => {
@@ -9,7 +9,7 @@ export const createFilter = (content) => {
     const summary = document.createElement('summary')
     const summaryText = document.createTextNode(item.filter)
     const div = document.createElement('div')
-    const labelEl = label(item.filter)
+    const label = Label(item.filter)
     const inputRange = inputSlider(Object.values(item))
 
     section.appendChild(details)
@@ -19,5 +19,5 @@ export const createFilter = (content) => {
     div.appendChild(inputRange)
   })
 
-  content.appendChild(section)
+  return section
 }
