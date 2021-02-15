@@ -1,15 +1,40 @@
+// Variable to check if search button is clicked
 let clicked = false
 
+// Variable to check if search button is clicked
+export default clicked
+
+// Updatable click variable
 export function setVariable(newValue) {
   clicked = newValue
 }
 
+// Return click variable
 export function getVariable() {
   return clicked
 }
 
-export default clicked
+// Render searched query on page
+export const getQuery = (writtenQuery) => {
+  let searchQuery = document.querySelector('#searchQuery')
+  searchQuery.innerHTML = `Zoekterm: ${writtenQuery}`
+  console.log(`Searched with the Query: ${writtenQuery}`)
+}
 
+// Deletes previous searched images
+export const deleteResults = () => {
+  const element = document.querySelector('#imageWrapper')
+
+  if (element.hasChildNodes()) {
+    let allElements = Array.from(element.childNodes)
+    element.removeChild(element.childNodes[0])
+    allElements.forEach((item) => {
+      item.remove()
+    })
+  }
+}
+
+// All filter options, for CSS
 export const filterElements = [
   {
     type: 'range',

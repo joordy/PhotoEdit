@@ -1,5 +1,5 @@
 import { inputSlider, Label } from './elements/index'
-import { filterElements } from '../helpers/_Elements'
+import { filterElements } from '../helpers/_Others'
 
 export const createFilter = (content) => {
   const section = document.createElement('section')
@@ -19,7 +19,11 @@ export const createFilter = (content) => {
     div.appendChild(inputRange)
   })
 
+  const firstEl = Array.from(section.childNodes)
+  firstEl[0].setAttribute('open', 'true')
+
   const elements = Array.from(section.childNodes)
+
   elements.forEach((targetDetail) => {
     targetDetail.addEventListener('click', () => {
       // Close all the details that are not targetDetail.
