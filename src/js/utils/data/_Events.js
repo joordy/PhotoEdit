@@ -18,7 +18,7 @@ export const userInput = async (data) => {
     createImg(data)
     return data
   }
-  return data
+  // return data
 }
 
 export const applyFilter = () => {}

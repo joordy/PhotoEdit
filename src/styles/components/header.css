@@ -4,7 +4,7 @@ header h1 {
 
 header article {
   width: calc(100%);
-  position: relative;
+  /* position: relative; */
   left: 0;
 }
 
@@ -15,6 +15,7 @@ header article input[type='text'] {
   border: none;
   border: 1px solid grey;
   border-radius: 1.5em;
+  position: relative;
 }
 
 header article input[type='text']:focus {

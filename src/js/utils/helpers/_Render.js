@@ -9,7 +9,6 @@ export const getQuery = (writtenQuery) => {
 export const deleteResults = () => {
   const element = document.querySelector('#imageWrapper')
 
-  console.log(element)
   if (element.hasChildNodes()) {
     let allElements = Array.from(element.childNodes)
     element.removeChild(element.childNodes[0])
