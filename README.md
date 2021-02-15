@@ -20,11 +20,82 @@ In creating these applications, I used different methods to make my own choices 
 
 ### **Folder structure**
 
+During this course I spent a lot of time writing neat modules. Personally, I like it when my code is clean, this means that I don't repeat myself (DRY), and my files are not hundreds of lines long.
+
+To comply with this I have created several folders. These are all located in my ** utils / ** folder.
+
+```md
+src/
++-- js/
+| +-- utils/
+| | +-- components/
+| | +-- config/
+| | +-- data/
+| | +-- helpers/
+| | +-- routes/
+| | +-- views/
+| +-- index.js
++-- styles/
+| +-- components/
+| +-- index.css
++-- index.html
+```
+
+<!-- #### **Components**
+
+The **components/** folder consists of all kinds of small elements in the elements / folder, which enable me to create HTML elements in JavaScript. Larger blocks of HTML are in the root of the **components/** folder.
+
+#### **Config**
+
 lorem ipsum
+
+#### **Data**
+
+lorem ipsum
+
+#### **Helpers**
+
+lorem ipsum
+
+#### **Routes**
+
+lorem ipsum
+
+#### **Views**
+
+lorem ipsum -->
 
 ### **Custom components**
 
-lorem ipsum
+The **components/** folder consists of all kinds of small elements in the elements / folder, which enable me to create HTML elements in JavaScript. Larger blocks of HTML are in the root of the **components/** folder.
+
+### **Importing elements**
+
+To avoid having dozens of 'import' lines on the first lines of my javascript files, I created an index.js in every folder. This file imports all possible functions from the relevant folder, and ensures that I can import these functions in 1 line of code where necessary. It's a DRY way of importing all the needed functions and variables inside JavaScript.
+
+#### **Example:**
+
+```js
+// ❌ Bad code
+import { functionOne } from './file1.js'
+import { functionTwo } from './file2.js'
+import { functionThree } from './file3.js'
+import { functionFour } from './file4.js'
+import { functionFive } from './file5.js'
+import { functionSix } from './file6.js'
+```
+
+```js
+// ✅ Clean code
+import {
+  functionOne,
+  functionTwo,
+  functionThree,
+  functionFour,
+  functionFive,
+  functionSix,
+} from './index.js'
+```
 
 ---
 
@@ -67,7 +138,7 @@ image = {
   sponsorship: ,                // Sponsored image
   tags: ,                       // Image tags
   updated_at: ,                 // Updated timestamp
-  urls: ,                       // All image URLS, thumbs, small, regular, full, raw
+  urls: {},                     // All image URLS, thumbs, small, regular, full, raw
   user: ,                       // Information about user
   views: ,                      // Total image views
   width: ,                      // Image width in PX
