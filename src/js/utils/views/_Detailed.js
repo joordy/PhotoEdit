@@ -1,4 +1,5 @@
-import html2canvas from 'html2canvas'
+// import html2canvas from 'html2canvas'
+import { saveAs } from 'file-saver'
 
 import {
   docTitle,
@@ -32,23 +33,23 @@ export const detailedView = (content, router) => {
     // Add Button to home
     let homeButton = addLink('/', 'Back')
     content.appendChild(homeButton)
-    // Add Heading one
-    let h1 = headingOne(props.description)
-    content.appendChild(h1)
+
+    const pageTitle = insertHeader(content, props)
 
     // Add Heading two
     let h2 = headingTwo(props.alt_description)
     content.appendChild(h2)
 
     // Add Image elements
-    let insertedImg = img(props.urls.regular, 'pageImg')
-    content.appendChild(insertedImg)
+    // let insertedImg = img(props.urls.regular, 'pageImg')
+    // content.appendChild(insertedImg)
     // Add Canvas elements
-    // let img = drawImage(content, props)
+    let img = drawCanvas(content, props)
 
     // Add all image filters
     let filter = addFilter(content)
-    let imgToEdit = document.querySelector('.pageImg')
+    let canVas = document.querySelector('.imageCanvas')
+    // let imgToEdit = document.querySelector('.pageImg')
     let applyControls = document.querySelectorAll('input[type=range]')
     let applyFilters = document.querySelectorAll('#applyFilter')
     applyFilters.forEach((item) => {
@@ -64,7 +65,8 @@ export const detailedView = (content, router) => {
             ') '
         })
         console.log(computedFilters)
-        imgToEdit.style.filter = computedFilters
+        // imgToEdit.style.filter = computedFilters
+        canVas.style.filter = computedFilters
       })
     })
 
@@ -73,16 +75,31 @@ export const detailedView = (content, router) => {
 
     let bttn = document.querySelector('#saveImg')
 
-    bttn.addEventListener('click', async function () {
+    bttn.addEventListener('click', function () {
       console.log('screenshot')
-      html2canvas(document.querySelector('#capture')).then((canvas) => {
-        console.log(canvas)
-        document.body.appendChild(canvas)
+      let myCanvas = document.querySelector('.imageCanvas')
+      myCanvas.toBlob(function (blob) {
+        saveAs(blob, 'pretty image.png')
       })
+      // html2canvas(document.querySelector('.imageCanvas')).then((canvas) => {
+      //   console.log(canvas)
+      //   document.body.appendChild(canvas)
+      // })
     })
   }
 }
 
+const insertHeader = (content, props) => {
+  if (!props.description) {
+    // Add Heading one of undefined
+    let h1 = headingOne('Title undefined')
+    content.appendChild(h1)
+  } else {
+    // Add Heading one
+    let h1 = headingOne(props.description)
+    content.appendChild(h1)
+  }
+}
 // html2canvas(document.querySelector('#export')).then((canvas) => {
 //   console.log(canvas)
 //   console.log(canvas.toDataURL('image/png'))
