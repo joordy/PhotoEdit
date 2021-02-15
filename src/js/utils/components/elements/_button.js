@@ -1,4 +1,4 @@
-export const button = (item) => {
+export const Button = (item) => {
   let element = document.createElement('button')
   let textnode = document.createTextNode(item)
   element.id = 'saveImg'

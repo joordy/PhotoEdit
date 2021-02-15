@@ -1,21 +1,19 @@
-import { docTitle } from './_DocTitle'
-import { addHeader } from './_Header'
-import { addMain } from './_Main'
-import { addImages } from './_Images'
-import { addFooter } from './_Footer'
-import { addFilter } from './_Filter'
-import { drawCanvas } from './_DrawCanvas'
-import { drawImage } from './_drawImage'
-import { saveElement } from './_Save'
+import { createCanvas } from './_createCanvas'
+import { createFilter } from './_createFilter'
+import { createFooter } from './_createFooter'
+import { createImage } from './_createImage'
+import { createImg } from './_createImg'
+import { createMain } from './_createMain'
+import { createSave } from './_createSave'
+import { createSearchHeader } from './_createSearch'
 
 export {
-  docTitle,
-  addHeader,
-  addMain,
-  addImages,
-  addFooter,
-  addFilter,
-  drawCanvas,
-  saveElement,
-  drawImage,
+  createCanvas,
+  createFilter,
+  createFooter,
+  createImg,
+  createImage,
+  createMain,
+  createSave,
+  createSearchHeader,
 }

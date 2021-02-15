@@ -1,4 +1,4 @@
-export const addCanvas = (canvClass) => {
+export const Canvas = (canvClass) => {
   let element = document.createElement('canvas')
   element.setAttribute('class', canvClass)
 

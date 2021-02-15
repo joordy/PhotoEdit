@@ -1,5 +1,5 @@
 import Navigo from 'navigo'
-import { detailedView, homeView, errorView } from '../views/index'
+import { detailedView, homeView, profileView, errorView } from '../views/index'
 
 const router = new Navigo('/', false)
 
@@ -11,6 +11,7 @@ export const Router = () => {
       .on({
         '/': homeView(body, router),
         '/image/:id': detailedView(body, router),
+        '/profile': profileView(body, router),
         '/error': errorView(body, router),
       })
       .notFound(() => {

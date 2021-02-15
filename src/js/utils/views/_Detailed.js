@@ -1,54 +1,51 @@
-// import html2canvas from 'html2canvas'
-import { saveAs } from 'file-saver'
-
+import html2canvas from 'html2canvas'
+// import { saveAs } from 'file-saver'
+import { createFilter, createCanvas } from '../components/index'
 import {
+  Href,
+  Button,
   docTitle,
-  addFilter,
-  drawCanvas,
-  drawImage,
-  saveElement,
-} from '../components/index'
-import {
-  addLink,
-  button,
-  headingOne,
-  headingTwo,
-  img,
+  HeadingOne,
+  HeadingTwo,
+  Header,
+  Main,
 } from '../components/elements/index'
 import { uniqueFilter } from '../helpers/index'
 
 export const detailedView = (content, router) => {
   return async () => {
     // Get Image details from clicked link
-    let props = await uniqueFilter()
-    console.log(props)
+    const props = await uniqueFilter()
 
     // Change doc title
     let title = docTitle('Editor | Unsplash Library — Jorrr')
 
     // Add Class to specific page, for styling unique content
     content.setAttribute('class', 'detailPage')
-    content.setAttribute('id', 'capture')
 
-    // Add Button to home
-    let homeButton = addLink('/', 'Back')
-    content.appendChild(homeButton)
+    // Add Insert HTML Elements
+    const header = Header('detailHeader')
+    const main = Main('detailMain')
+    const homeButton = Href('/', 'Back')
+    const h1 = insertHeader(props)
+    const h2 = HeadingTwo(props.alt_description)
+    const imgCanvas = await createCanvas(props)
+    const filters = createFilter(content)
+    const saveButton = Button('Save')
 
-    const pageTitle = insertHeader(content, props)
+    // Append elements to the body element
+    content.appendChild(header)
+    content.appendChild(main)
+    header.appendChild(homeButton)
+    header.appendChild(h1)
+    header.appendChild(h2)
+    header.appendChild(saveButton)
 
-    // Add Heading two
-    let h2 = headingTwo(props.alt_description)
-    content.appendChild(h2)
-
-    // Add Image elements
-    // let insertedImg = img(props.urls.regular, 'pageImg')
-    // content.appendChild(insertedImg)
-    // Add Canvas elements
-    let img = drawCanvas(content, props)
+    main.appendChild(imgCanvas)
+    main.appendChild(filters)
 
     // Add all image filters
-    let filter = addFilter(content)
-    let canVas = document.querySelector('.imageCanvas')
+    const canVas = document.querySelector('.imageCanvas')
     // let imgToEdit = document.querySelector('.pageImg')
     let applyControls = document.querySelectorAll('input[type=range]')
     let applyFilters = document.querySelectorAll('#applyFilter')
@@ -70,34 +67,29 @@ export const detailedView = (content, router) => {
       })
     })
 
-    let saveButton = button('Save')
-    content.appendChild(saveButton)
-
-    let bttn = document.querySelector('#saveImg')
+    const bttn = document.querySelector('#saveImg')
 
     bttn.addEventListener('click', function () {
       console.log('screenshot')
-      let myCanvas = document.querySelector('.imageCanvas')
-      myCanvas.toBlob(function (blob) {
-        saveAs(blob, 'pretty image.png')
-      })
-      // html2canvas(document.querySelector('.imageCanvas')).then((canvas) => {
-      //   console.log(canvas)
-      //   document.body.appendChild(canvas)
+      // const myCanvas = document.querySelector('.imageCanvas')
+      // myCanvas.toBlob(function (blob) {
+      //   saveAs(blob, 'pretty image.png')
       // })
+      html2canvas(document.querySelector('.imageCanvas')).then((canvas) => {
+        console.log(canvas)
+        document.body.appendChild(canvas)
+      })
     })
   }
 }
 
-const insertHeader = (content, props) => {
+const insertHeader = (props) => {
   if (!props.description) {
-    // Add Heading one of undefined
-    let h1 = headingOne('Title undefined')
-    content.appendChild(h1)
+    let h1 = HeadingOne('Unknown Title')
+    return h1
   } else {
-    // Add Heading one
-    let h1 = headingOne(props.description)
-    content.appendChild(h1)
+    let h1 = HeadingOne(props.description)
+    return h1
   }
 }
 // html2canvas(document.querySelector('#export')).then((canvas) => {

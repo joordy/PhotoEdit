@@ -1,37 +1,10 @@
-.detailPage img {
+.detailPage main canvas {
   width: 100%;
   height: auto;
-  max-height: 400px;
-  object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
-
-.detailPage canvas {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-/* details {
-  max-width: 400px;
-}
-details[open] > div {
-  animation-name: slideDown;
-  animation-duration: 200ms;
-  animation-timing-function: cubic-bezier(0, 0, 1, 0);
-  overflow: hidden;
-  padding-left: 18px;
-}
-@keyframes slideDown {
-  0% {
-    opacity: 0;
-    height: 0;
-  }
-  100% {
-    opacity: 1;
-    height: 20px;
-  }
-} */
-.detailPage section {
+/* .detailPage section {
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -52,11 +25,14 @@ details[open] > div {
   border-radius: 3px;
   padding: 5px 10px;
   outline: none;
-  font-size: 17px;
+  font-size: 0.8rem;
   vertical-align: top;
   display: block;
-  padding: 50px 10px 5px 10px;
+  padding: 5px 10px 45px 10px;
   position: relative;
+}
+.detailPage section details summary::first-letter {
+  text-transform: uppercase;
 }
 .detailPage section details summary::-webkit-details-marker {
   display: none;
@@ -64,13 +40,13 @@ details[open] > div {
 .detailPage section details summary:before {
   position: absolute;
   left: 50%;
-  top: 5px;
+  bottom: 5px;
   transform: translateX(-50%);
   display: block;
   width: 32px;
   height: 32px;
   content: '';
-  background-color: orange;
+  background-color: grey;
   border-radius: 50%;
   opacity: 0.2;
   transition: 0.3s ease;
@@ -81,9 +57,10 @@ details[open] > div {
   height: 140px;
 }
 .detailPage section details[open] summary {
-  color: orange;
+  color: var(--softGreen);
 }
 .detailPage section details[open] summary:before {
+  background-color: var(--softGreen);
   opacity: 1;
 }
 
@@ -96,15 +73,35 @@ details[open] > div {
   border-radius: 5px;
   border: none;
 }
-.detailPage
-  section
-  details[open]
-  summary
-  input[type='range']::-webkit-slider-thumb {
+
+.detailPage details[open] summary div {
+  display: none;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.detailPage details summary div input[type='range'] {
+  width: 100%;
+}
+
+.detailPage details[open] summary input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 24px;
   height: 24px;
   background-color: orange;
   border-radius: 50%;
   cursor: pointer;
+} */
+
+@media screen and (min-width: 768px) {
+  .detailPage {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .detailPage main canvas {
+    width: 100vw;
+    margin-left: -10vw;
+  }
 }
