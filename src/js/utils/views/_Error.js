@@ -1,13 +1,14 @@
-import { docTitle } from '../components/index'
+import { docTitle } from '../components/elements/index'
 export const errorView = (body, router) => {
   return async () => {
     // Change doc title
-    let title = docTitle('404 Page Not Found | Unsplash Library — Jorrr')
+    const title = docTitle('404 Page Not Found | Unsplash Library — Jorrr')
 
     // Add 404 message
-    let content = document.getElementById('app')
-    let element = document.createElement('header')
-    let textnode = document.createTextNode(`404`)
+    const content = document.getElementById('app')
+    const element = document.createElement('header')
+    const textnode = document.createTextNode(`404`)
+
     element.appendChild(textnode)
     content.appendChild(element)
   }

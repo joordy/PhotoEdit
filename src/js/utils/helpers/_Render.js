@@ -5,6 +5,7 @@ export const getQuery = (writtenQuery) => {
   console.log(`Searched with the Query: ${writtenQuery}`)
 }
 
+// Deletes previous searched images
 export const deleteResults = () => {
   const element = document.querySelector('#imageWrapper')
 

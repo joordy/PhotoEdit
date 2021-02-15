@@ -1,16 +1,10 @@
-// import html2canvas from 'html2canvas'
-import { saveAs } from 'file-saver'
-
-import {
-  docTitle,
-  addFilter,
-  drawCanvas,
-  drawImage,
-  saveElement,
-} from '../components/index'
+import html2canvas from 'html2canvas'
+// import { saveAs } from 'file-saver'
+import { createFilter, createCanvas } from '../components/index'
 import {
   addLink,
   button,
+  docTitle,
   headingOne,
   headingTwo,
   img,
@@ -20,8 +14,7 @@ import { uniqueFilter } from '../helpers/index'
 export const detailedView = (content, router) => {
   return async () => {
     // Get Image details from clicked link
-    let props = await uniqueFilter()
-    console.log(props)
+    const props = await uniqueFilter()
 
     // Change doc title
     let title = docTitle('Editor | Unsplash Library — Jorrr')
@@ -31,24 +24,24 @@ export const detailedView = (content, router) => {
     content.setAttribute('id', 'capture')
 
     // Add Button to home
-    let homeButton = addLink('/', 'Back')
+    const homeButton = addLink('/', 'Back')
     content.appendChild(homeButton)
 
     const pageTitle = insertHeader(content, props)
 
     // Add Heading two
-    let h2 = headingTwo(props.alt_description)
+    const h2 = headingTwo(props.alt_description)
     content.appendChild(h2)
 
     // Add Image elements
     // let insertedImg = img(props.urls.regular, 'pageImg')
     // content.appendChild(insertedImg)
     // Add Canvas elements
-    let img = drawCanvas(content, props)
+    const img = createCanvas(content, props)
 
     // Add all image filters
-    let filter = addFilter(content)
-    let canVas = document.querySelector('.imageCanvas')
+    const filter = createFilter(content)
+    const canVas = document.querySelector('.imageCanvas')
     // let imgToEdit = document.querySelector('.pageImg')
     let applyControls = document.querySelectorAll('input[type=range]')
     let applyFilters = document.querySelectorAll('#applyFilter')
@@ -70,21 +63,21 @@ export const detailedView = (content, router) => {
       })
     })
 
-    let saveButton = button('Save')
+    const saveButton = button('Save')
     content.appendChild(saveButton)
 
-    let bttn = document.querySelector('#saveImg')
+    const bttn = document.querySelector('#saveImg')
 
     bttn.addEventListener('click', function () {
       console.log('screenshot')
-      let myCanvas = document.querySelector('.imageCanvas')
-      myCanvas.toBlob(function (blob) {
-        saveAs(blob, 'pretty image.png')
-      })
-      // html2canvas(document.querySelector('.imageCanvas')).then((canvas) => {
-      //   console.log(canvas)
-      //   document.body.appendChild(canvas)
+      // const myCanvas = document.querySelector('.imageCanvas')
+      // myCanvas.toBlob(function (blob) {
+      //   saveAs(blob, 'pretty image.png')
       // })
+      html2canvas(document.querySelector('.imageCanvas')).then((canvas) => {
+        console.log(canvas)
+        document.body.appendChild(canvas)
+      })
     })
   }
 }

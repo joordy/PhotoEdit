@@ -1,22 +1,21 @@
 import { eventButton, eventInput, fetchQuery } from '../data/index'
-import { addHeader, addImages, addFooter } from '../components/index'
+import { createHeader, createImg, createFooter } from '../components/index'
 import { main } from '../components/elements/_main'
 
 export const homeView = (content, router) => {
   return async () => {
-    // Adding Header
-    content.setAttribute('class', 'homePage')
-    let header = addHeader(content)
+    const header = createHeader(content)
+    const mainEl = main('imageWrapper')
 
-    // Add main element
-    let mainEl = main('imageWrapper')
+    // Adding Header and main element
+    content.setAttribute('class', 'homePage')
     content.appendChild(mainEl)
 
-    // Fetch image data
-    let data = await fetchQuery()
+    // Fetch image data for events
+    const data = await fetchQuery()
 
-    // Event listener for search button
-    let button = document.querySelector('#searchPhotos')
+    // Event listeners for search button and enter key
+    const button = document.querySelector('#searchPhotos')
     button.addEventListener(
       'click',
       (data) => {
@@ -24,9 +23,7 @@ export const homeView = (content, router) => {
       },
       false
     )
-
-    // Event listener for enter key
-    let input = document.querySelector('#searchElement')
+    const input = document.querySelector('#searchElement')
     input.addEventListener(
       'keyup',
       (data) => {
@@ -35,10 +32,8 @@ export const homeView = (content, router) => {
       false
     )
 
-    // Add images to main section
-    addImages(data)
-
-    // Add Footer for future menu
-    addFooter(content)
+    // Add images to main section and footer to the page
+    createImg(data)
+    createFooter(content)
   }
 }
