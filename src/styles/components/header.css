@@ -222,3 +222,39 @@ header p {
 #imgInfo .openImgElement {
   display: block !important;
 }
+
+@media screen and (min-width: 1200px) {
+  .detailPage header {
+    width: 100%;
+    padding: 1em 2em;
+    background-color: #1b1b22;
+    margin: 0;
+  }
+  .detailPage #detailHeader #fileInfo {
+    width: unset;
+    height: unset;
+    border-radius: unset;
+    position: unset;
+    margin: unset;
+    background-color: unset;
+  }
+  .detailPage #detailHeader #fileInfo:before {
+    content: '';
+  }
+  .detailPage #detailHeader #fileInfo article {
+    width: unset;
+    display: flex;
+    position: unset;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: unset;
+    padding: unset;
+  }
+  .detailPage #detailHeader #fileInfo article button {
+    padding: unset;
+    margin: unset;
+    margin-left: 1rem;
+    height: 3rem;
+    padding: 0 3rem;
+  }
+}
