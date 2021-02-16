@@ -3,6 +3,7 @@ import { Canvas } from './_canvas'
 import { Button } from './_button'
 import { docTitle } from './_docTitle'
 import { Div } from './_div'
+import { Footer } from './_footer'
 import { Header } from './_header'
 import { HeadingOne } from './_h1'
 import { HeadingTwo } from './_h2'
@@ -21,6 +22,7 @@ export {
   Button,
   docTitle,
   Div,
+  Footer,
   HeadingOne,
   HeadingTwo,
   HeadingThree,

@@ -24,7 +24,7 @@ export const detailedView = (body) => {
     const props = await uniqueFilter()
     console.log(props)
     // Change doc title
-    const pageTitle = docTitle('Editor | Unsplash Library — Jor')
+    const pageTitle = docTitle('Editor | PhotoEdit — Jor')
 
     // Add Insert HTML Elements
     const header = Header('detailHeader')
@@ -48,10 +48,11 @@ export const detailedView = (body) => {
     const CanVas = document.querySelector('.imageCanvas')
     let applyControls = document.querySelectorAll('input[type=range]')
     let applyFilters = document.querySelectorAll('#applyFilter')
+    let computedFilters
+
     applyFilters.forEach((item) => {
       item.addEventListener('change', function () {
-        let computedFilters = ''
-
+        computedFilters = ''
         applyControls.forEach((elem) => {
           computedFilters +=
             elem.getAttribute('data-filter') +
@@ -62,7 +63,9 @@ export const detailedView = (body) => {
         })
         // console.log(computedFilters)
         CanVas.style.filter = computedFilters
+        return computedFilters
       })
+      return computedFilters
     })
 
     const downloadBtn = document.querySelector('#downloadImg')
@@ -83,14 +86,15 @@ export const detailedView = (body) => {
       console.log('save')
       let oldItems = JSON.parse(localStorage.getItem('images')) || []
 
-      let newItem = props
+      let newItem = {
+        image: props,
+        styles: computedFilters,
+      }
 
       oldItems.push(newItem)
 
       localStorage.setItem('images', JSON.stringify(oldItems))
-      // let data = []
-      // data.push(props)
-      // localStorage.setItem('savedImg', JSON.stringify(data))
+      console.log(JSON.parse(localStorage.getItem('images')))
     })
 
     fileBtn.addEventListener('click', (e) => {

@@ -28,21 +28,6 @@ body {
   border-radius: 8px;
 }
 
-@media screen and (min-width: 600px) {
-  .homePage main {
-    padding: 32px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 16px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .homePage main {
-    padding: 32px 48px;
-    grid-gap: 32px;
-  }
-}
-
 /*************************************
             Editor page 
 **************************************/
@@ -143,6 +128,7 @@ body {
   -webkit-appearance: none;
   appearance: none;
   width: 80%;
+  max-width: 500px;
   height: 10px;
   outline: none;
   border-radius: 5px;
@@ -160,20 +146,137 @@ body {
   cursor: pointer;
 }
 
+/*************************************
+            Profile page 
+**************************************/
+
+.profilePage main {
+  max-width: 600px;
+  margin: 0 auto;
+  /* width: clamp(300px, 70vw, 1000px); */
+}
+
+.profilePage main article:nth-child(1) img {
+  width: 100%;
+  height: auto;
+
+  border-radius: 50%;
+}
+
+.profilePage main article:nth-child(2) div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 200px;
+  width: 100%;
+}
+
+.profilePage main article:nth-child(2) div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*************************************
+            Media Querys
+**************************************/
+
 @media screen and (max-height: 750px) {
   .detailPage main canvas {
     height: 60vh;
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
   body {
     padding: 1em 2em;
+  }
+  .homePage main {
+    padding: 32px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 350px;
+  }
+  .detailPage section {
+    justify-content: center;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  body {
-    padding: 1em 4em;
+  .homePage {
+    padding: 1em 10vw 0em;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .homePage main {
+    padding: 32px 48px;
+    grid-gap: 1.5rem;
+    grid-auto-rows: 450px;
+  }
+
+  .detailPage {
+    padding: 0;
+  }
+
+  .detailPage main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    height: calc(100vh - 80px);
+    background-color: var(--colorPrimary);
+    color: #89899b;
+  }
+
+  .detailPage main canvas {
+    height: inherit;
+  }
+
+  .detailPage main section {
+    width: 100%;
+    height: 100%;
+    position: unset;
+    display: block;
+    width: unset;
+  }
+
+  .detailPage main section details:first-child,
+  .detailPage main section details:last-child {
+    margin: 0;
+    padding: 0;
+  }
+
+  .detailPage main section details {
+    width: 100%;
+    height: 4rem;
+    /* height: 11.1%; */
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .detailPage main section details[open] {
+    margin: unset;
+    height: 7rem;
+  }
+
+  .detailPage main section details summary {
+    width: 100%;
+    /* height: 100%; */
+    padding: unset;
+    line-height: 4rem;
+    font-size: 1rem;
+  }
+
+  .detailPage main section details summary:before {
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .detailPage main section details[open] div {
+    position: unset;
+    width: unset;
+    transform: unset;
+    height: unset;
+    margin: unset;
   }
 }
