@@ -1,5 +1,5 @@
 /*************************************
-            Homepage 
+              Homepage 
 **************************************/
 
 header {
@@ -30,7 +30,7 @@ header h1 {
 #searchHeader article input[type='text']:focus {
   border-radius: 1.5em;
   outline: none;
-  border: 1.5px solid orange;
+  border: 1.5px solid var(--colorAccent);
 }
 
 #searchHeader article button {
@@ -54,7 +54,7 @@ header h1 {
 #searchHeader article button:focus {
   border-radius: 1.5em;
   outline: none;
-  border: 1.5px solid orange;
+  border: 1.5px solid var(--colorAccent);
 }
 
 header p {
@@ -74,7 +74,7 @@ header p {
     line-height: 2em;
   }
 
-  header article {
+  #searchHeader article {
     width: unset;
     height: 64px;
     left: unset;
@@ -82,23 +82,23 @@ header p {
     place-items: center;
   }
 
-  header article input[type='text'] {
+  #searchHeader article input[type='text'] {
     border-radius: 20px;
     width: 225px;
   }
 
-  header article input[type='text']:focus-within {
+  #searchHeader article input[type='text']:focus-within {
     width: 50vw;
     transition: 0.5s;
   }
 
-  header article button {
+  #searchHeader article button {
     margin: auto;
     top: 0;
     bottom: 0;
   }
 
-  header p {
+  #searchHeader p {
     flex: 0 1 100%;
   }
 }
@@ -109,7 +109,6 @@ header p {
 
 .detailPage header {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   width: 100%;
   position: relative;
@@ -117,7 +116,7 @@ header p {
 
 .detailPage header a {
   flex: 1;
-  color: var(--softWhite);
+  color: var(--colorSoftWhite);
   text-decoration: none;
   display: flex;
   line-height: 2rem;
@@ -126,33 +125,29 @@ header p {
 
 .detailPage header a:before {
   font-family: FontAwesome;
-  content: '\f0a8';
+  content: '\f060';
   display: block;
-  margin-right: 1em;
-  font-size: 24px;
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
   padding-top: -4px;
 }
 
-/****
-  Buttons
-****/
-
-/* #imgInfo article {
-  display: none;
-} */
+/*************************************
+              Buttons
+*************************************/
 
 #fileInfo,
 #imgInfo {
   width: 2rem;
   height: 2rem;
-  border-radius: 50%;
+  border-radius: 0.75rem;
   background-color: white;
   position: relative;
   margin-left: 0.5rem;
 }
 
 #fileInfo:before {
-  color: black;
+  color: var(--colorPrimary);
   font-family: FontAwesome;
   content: '\f019';
   position: absolute;
@@ -163,14 +158,17 @@ header p {
 
 #fileInfo article {
   position: absolute;
+  z-index: 1;
   top: 50px;
   right: 0;
-  width: 70vw;
+  width: 250px;
   background-color: white;
   flex-wrap: wrap;
   flex-direction: column;
   display: none;
   transition: 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
 
 #fileInfo .openFileElement {
@@ -179,6 +177,17 @@ header p {
 
 #fileInfo article button {
   width: 100%;
+  background-color: var(--colorAccent);
+  outline: none;
+  border: none;
+  margin: 0.25rem 0;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+  opacity: 0.75;
+}
+
+#fileInfo article button:hover {
+  opacity: 1;
 }
 
 #fileInfo article button:nth-child(1):before {
@@ -190,7 +199,7 @@ header p {
 }
 
 #imgInfo:before {
-  color: black;
+  color: var(--colorPrimary);
   font-family: FontAwesome;
   content: '\f129';
   position: absolute;
@@ -202,55 +211,14 @@ header p {
 #imgInfo article {
   position: absolute;
   top: 50px;
-  right: 0;
-  width: 70vw;
+  right: calc(-40px - -0.5rem);
   background-color: white;
-  flex-wrap: wrap;
-  flex-direction: column;
   display: none;
   color: black;
   transition: 0.3s ease;
+  text-align: right;
 }
 
 #imgInfo .openImgElement {
-  display: flex !important;
+  display: block !important;
 }
-/* 
-
-.detailPage
-.detailPage
-
-.detailPage 
-.detailPage  */
-
-/* .detailPage #fileInfo 
-.detailPage #fileInfo  */
-/* 
-.detailPage header div:nth-child(2)
-.detailPage header div:nth-child(2) 
-.detailPage header div:nth-child(2) 
-.detailPage header div:nth-child(2) 
-.detailPage header div:nth-child(2) a */
-/* .detailPage header div:before {
-  color: black;
-  font-family: FontAwesome;
-  content: '\f019';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.detailPage header div button {
-  height: 40px;
-  position: relative;
-  color: transparent;
-  font-size: 1rem;
-}
-.detailPage header div button:nth-child(1):before {
-  color: black;
-  font-family: FontAwesome;
-  content: '\f019';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-} */
