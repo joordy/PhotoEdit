@@ -146,6 +146,40 @@ body {
   cursor: pointer;
 }
 
+/*************************************
+            Profile page 
+**************************************/
+
+.profilePage main {
+  max-width: 600px;
+  margin: 0 auto;
+  /* width: clamp(300px, 70vw, 1000px); */
+}
+
+.profilePage main article:nth-child(1) img {
+  width: 100%;
+  height: auto;
+
+  border-radius: 50%;
+}
+
+.profilePage main article:nth-child(2) div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 200px;
+  width: 100%;
+}
+
+.profilePage main article:nth-child(2) div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*************************************
+            Media Querys
+**************************************/
+
 @media screen and (max-height: 750px) {
   .detailPage main canvas {
     height: 60vh;

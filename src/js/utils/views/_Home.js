@@ -9,11 +9,13 @@ import { Main } from '../components/elements/_main'
 export const homeView = (body) => {
   return async () => {
     const header = createSearchHeader(body)
-    const mainEl = Main('imageWrapper')
+    const main = Main('imageWrapper')
+    const footer = createFooter()
 
     // Adding Header and main element
     body.setAttribute('class', 'homePage')
-    body.appendChild(mainEl)
+    body.appendChild(main)
+    body.appendChild(footer)
 
     // Fetch image data for events
     const data = await fetchQuery()
@@ -38,6 +40,5 @@ export const homeView = (body) => {
 
     // Add images to main section and footer to the page
     createImg(data)
-    createFooter(body)
   }
 }
