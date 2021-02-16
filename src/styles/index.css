@@ -17,19 +17,7 @@
   --sizeLg1: 2rem;
   --sizeLg2: 3rem;
   --sizeLg3: 4rem;
-  line-height: 1;
   --fontsize: 16px;
-
-  /* --primary: #000;
-  --secondary: #eeeeef;
-  --lightDarker: #3f3e3e;
-  --dark: #202020;
-  --softDark: #333;
-  --softWhite: #fdfdfd;
-  --softGreen: #03dac5;
-  --fontsize: 16px;
-  --fullwidth: 100%;
-  --h2: 1.5em; */
 }
 
 @import './components/header.css';
