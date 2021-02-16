@@ -22,7 +22,6 @@ export const detailedView = (body) => {
     body.setAttribute('class', 'detailPage')
     // Get Image details from clicked link
     const props = await uniqueFilter()
-
     console.log(props)
     // Change doc title
     const pageTitle = docTitle('Editor | Unsplash Library — Jor')
@@ -81,9 +80,17 @@ export const detailedView = (body) => {
     })
 
     saveBtn.addEventListener('click', (e) => {
-      let data = []
-      data.push(props)
-      localStorage.setItem('savedImg', JSON.stringify(data))
+      console.log('save')
+      let oldItems = JSON.parse(localStorage.getItem('images')) || []
+
+      let newItem = props
+
+      oldItems.push(newItem)
+
+      localStorage.setItem('images', JSON.stringify(oldItems))
+      // let data = []
+      // data.push(props)
+      // localStorage.setItem('savedImg', JSON.stringify(data))
     })
 
     fileBtn.addEventListener('click', (e) => {

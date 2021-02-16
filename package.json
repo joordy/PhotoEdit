@@ -28,8 +28,6 @@
     "prettier": "^2.2.1"
   },
   "dependencies": {
-    "file-saver": "^2.0.5",
-    "html2canvas": "^1.0.0-rc.7",
     "navigo": "^8.8.6",
     "nodemon": "^2.0.7",
     "utils": "^0.3.1"
