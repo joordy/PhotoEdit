@@ -24,7 +24,7 @@ export const detailedView = (body) => {
     const props = await uniqueFilter()
     console.log(props)
     // Change doc title
-    const pageTitle = docTitle('Editor | PhotoEdit — Jor')
+    const pageTitle = docTitle('Editor | PhotoPaint — Jor')
 
     // Add Insert HTML Elements
     const header = Header('detailHeader')

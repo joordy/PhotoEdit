@@ -88,7 +88,8 @@ header p {
   }
 
   #searchHeader article input[type='text']:focus-within {
-    width: 50vw;
+    width: 30vw;
+    max-width: 500px;
     transition: 0.5s;
   }
 

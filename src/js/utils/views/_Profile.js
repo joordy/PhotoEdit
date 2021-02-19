@@ -15,7 +15,7 @@ export const profileView = (body) => {
     body.setAttribute('class', 'profilePage')
 
     // Change doc title
-    const title = docTitle('User Profile | PhotoEdit — Jorrr')
+    const title = docTitle('User Profile | PhotoPaint — Jorrr')
 
     // Place data (localStorage) in prop element
     const props = JSON.parse(localStorage.getItem('images'))

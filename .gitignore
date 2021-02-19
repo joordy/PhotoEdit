@@ -1,15 +1,10 @@
-notes.md
 node_modules/
 _assignment/
 dist/
 .cache/
-# config/
-
-
 .npm
 .env
 .env.test
 .babelrc
 .prettierrc
 .eslintrc.json
-test
