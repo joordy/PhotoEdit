@@ -3,31 +3,33 @@ import {
   getVariable,
   filterItems,
   sortItems,
+  getQuery,
 } from '../helpers/index'
+import { searchQuery } from '../components/index'
 import { accessKey, globalUrl, searchUrl } from '../config/config'
 
 export const fetchQuery = async (query) => {
-  let res
+  let response
 
   if (query === '' && getVariable() == true) {
-    res = await getMyData(
-      `${globalUrl}${accessKey}&per_page=33&order_by=popular`
-    )
-    let filter = filterItems(res)
-    return await filter
+    let apiUrl = `${globalUrl}${accessKey}&per_page=33&order_by=popular`
+    response = await getMyData(apiUrl)
+    let filteredData = filterItems(response)
+    return await filteredData
   } else if (getVariable() == true) {
-    res = await getMyData(
-      `${searchUrl}${accessKey}&query=${query}&per_page=33&order_by=popular`
-    )
-    let filter = filterItems(res.results)
-    let sort = sortItems(filter)
-    console.log(sort)
-    return await sort
+    let apiUrl = `${searchUrl}${accessKey}&query=${query}&per_page=33&order_by=popular`
+    response = await getMyData(apiUrl)
+    let filter = filterItems(response.results)
+    let sortedData = sortItems(filter)
+    // let writtenQuery = getQuery(query)
+    searchQuery(query)
+    // console.log(writtenQuery)
+    // console.log(sort)
+    return await sortedData
   } else if (getVariable() == false) {
-    res = await getMyData(
-      `${globalUrl}${accessKey}&per_page=33&order_by=popular`
-    )
-    let data = filterItems(res)
-    return await data
+    let apiUrl = `${globalUrl}${accessKey}&per_page=33&order_by=popular`
+    response = await getMyData(apiUrl)
+    let filteredData = filterItems(response)
+    return await filteredData
   }
 }
