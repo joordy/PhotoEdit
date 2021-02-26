@@ -1,3 +1,4 @@
+// Fetch function which fetch every type of data with params.
 export const getMyData = async (endpoint) => {
   try {
     const res = await fetch(endpoint)

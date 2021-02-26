@@ -1,5 +1,6 @@
 import {
   Article,
+  Button,
   docTitle,
   Div,
   Href,
@@ -20,9 +21,11 @@ export const profileView = (body) => {
     // Place data (localStorage) in prop element
     const props = JSON.parse(localStorage.getItem('images'))
 
-    console.log(props)
+    // Placeholder profile image
     const placeholder =
       'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80'
+
+    // Creating HTML elements
     const header = Header('profileheader')
     const homeButton = Href('/', 'back')
     const main = Main('profile')
@@ -35,8 +38,10 @@ export const profileView = (body) => {
     const dribbble = Href('https://www.instagram.com', 'c')
     const h2 = HeadingTwo('Saved collection')
     const div = Div()
+    const button = Button('remove', 'removeImages')
     const text = Text('No saved images yet')
 
+    // Appending elements to the body, header and main
     body.appendChild(header)
     body.appendChild(main)
 
@@ -53,15 +58,33 @@ export const profileView = (body) => {
 
     imgArticle.appendChild(h2)
     imgArticle.appendChild(div)
+    imgArticle.appendChild(button)
 
+    // If else statement, to display text if localStorage is empty, or append the image with styling.
     if (props === null) {
       console.log(true)
       div.appendChild(text)
+      button.setAttribute('disabled', '')
     } else {
       props.forEach((item) => {
         const img = Image(item.image.urls.regular, 'savedImage')
         img.style.cssText = `filter: ${item.styles}`
         div.appendChild(img)
+      })
+    }
+
+    const removeImagesBtn = document.querySelector('#removeImages')
+    console.log(removeImagesBtn)
+
+    if (!removeImagesBtn) {
+      console.log('its tru  e')
+      console.log(!removeImagesBtn)
+    } else {
+      console.log('test')
+      removeImagesBtn.addEventListener('click', function () {
+        console.log('click')
+        localStorage.clear()
+        location.reload(true)
       })
     }
   }

@@ -192,6 +192,11 @@ body {
   object-fit: cover;
 }
 
+.profilePage main article:nth-child(2) button {
+  width: 300px;
+  height: 75px;
+}
+
 /*************************************
             Media Querys
 **************************************/

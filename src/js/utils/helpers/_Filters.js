@@ -1,5 +1,6 @@
 import { checkID } from '../data/index'
 
+// Get ID from user's URL.
 export const uniqueFilter = async () => {
   let url = window.location.href
   url = url.replace(`${window.location.origin}/image/`, '')
@@ -7,6 +8,7 @@ export const uniqueFilter = async () => {
   return image
 }
 
+// Map data object with usable information
 export const filterItems = (data) => {
   return data.map((item) => {
     return {
@@ -53,6 +55,7 @@ export const filterItems = (data) => {
   })
 }
 
+// Sort data from highest to low count of likes
 export const sortItems = (data) => {
   return data.sort((low, high) => high.likes - low.likes)
 }

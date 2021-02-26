@@ -8,12 +8,15 @@ import { Main } from '../components/elements/_main'
 
 export const homeView = (body) => {
   return async () => {
+    // Add Class to specific page, for styling unique content
+    body.setAttribute('class', 'homePage')
+
+    // Creating HTML elements
     const header = createSearchHeader(body)
     const main = Main('imageWrapper')
     const footer = createFooter()
 
-    // Adding Header and main element
-    body.setAttribute('class', 'homePage')
+    // Appending elements to the body
     body.appendChild(main)
     body.appendChild(footer)
 
