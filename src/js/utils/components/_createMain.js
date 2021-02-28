@@ -1,5 +1,5 @@
 export const createMain = () => {
-  // Create Main
+  // Create Main element
   const content = document.getElementById('app')
   const element = document.createElement('main')
 

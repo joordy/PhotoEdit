@@ -1,6 +1,4 @@
-// export const LocalStorageSetup = () => {
-//   let savedElements = []
-
-//   localStorage.setItem('savedElements', JSON.stringify(savedElements))
-//   localStorage.
-// }
+export const LocalStorageSetup = () => {
+  let images = []
+  localStorage.setItem('value', JSON.stringify(images))
+}

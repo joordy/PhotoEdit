@@ -1,10 +1,9 @@
 // import html2canvas from 'html2canvas'
+import { uniqueFilter } from '../helpers/index'
 import {
   Href,
-  Button,
+  Article,
   docTitle,
-  HeadingOne,
-  HeadingTwo,
   Header,
   Main,
 } from '../components/elements/index'
@@ -14,7 +13,6 @@ import {
   createCanvas,
   createInfo,
 } from '../components/index'
-import { uniqueFilter } from '../helpers/index'
 
 export const detailedView = (body) => {
   return async () => {
@@ -26,8 +24,9 @@ export const detailedView = (body) => {
     // Change doc title
     const pageTitle = docTitle('Editor | PhotoPaint — Jor')
 
-    // Add Insert HTML Elements
+    // Creating HTML elements
     const header = Header('detailHeader')
+    const article = Article()
     const main = Main('detailMain')
     const homeButton = Href('/', 'Back')
     const imgCanvas = await createCanvas(props)
@@ -35,21 +34,25 @@ export const detailedView = (body) => {
     const info = createInfo(props)
     const save = createSave(props)
 
-    // Append elements to the body element
+    // Appending elements to the body, header and main
     body.appendChild(header)
-    header.appendChild(homeButton)
-    header.appendChild(info)
-    header.appendChild(save)
     body.appendChild(main)
+
+    header.appendChild(homeButton)
+    header.appendChild(article)
+    article.appendChild(info)
+    article.appendChild(save)
+
     main.appendChild(imgCanvas)
     main.appendChild(filters)
 
-    // Add all image filters
+    // Select canvas from HTML, and apply filters to the canvas section.
     const CanVas = document.querySelector('.imageCanvas')
     let applyControls = document.querySelectorAll('input[type=range]')
     let applyFilters = document.querySelectorAll('#applyFilter')
     let computedFilters
 
+    // When editing, applying filters to canvas
     applyFilters.forEach((item) => {
       item.addEventListener('change', function () {
         computedFilters = ''
@@ -61,7 +64,6 @@ export const detailedView = (body) => {
             elem.getAttribute('data-scale') +
             ') '
         })
-        // console.log(computedFilters)
         CanVas.style.filter = computedFilters
         return computedFilters
       })
@@ -73,6 +75,7 @@ export const detailedView = (body) => {
     const fileBtn = document.querySelector('#fileInfo')
     const imgBtn = document.querySelector('#imgInfo')
 
+    // Download button, to download the canvas element WITHOUT styles to your local computer
     downloadBtn.addEventListener('click', (e) => {
       const downloadElement = document.createElement('a')
       body.appendChild(downloadElement)
@@ -82,6 +85,7 @@ export const detailedView = (body) => {
       body.removeChild(downloadElement)
     })
 
+    // Save image element with CSS styles to localStorage
     saveBtn.addEventListener('click', (e) => {
       console.log('save')
       let oldItems = JSON.parse(localStorage.getItem('images')) || []
@@ -97,10 +101,13 @@ export const detailedView = (body) => {
       console.log(JSON.parse(localStorage.getItem('images')))
     })
 
+    // Toggle button to open div with buttons.
     fileBtn.addEventListener('click', (e) => {
       const article = document.querySelector('#saveInfo')
       article.classList.toggle('openFileElement')
     })
+
+    // Toggle button to open div with image information
     imgBtn.addEventListener('click', (e) => {
       const article = document.querySelector('#imageInfo')
       article.classList.toggle('openImgElement')
