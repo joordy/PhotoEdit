@@ -23,6 +23,8 @@
 @import './components/header.css';
 @import './components/main.css';
 @import './components/footer.css';
+@import './components/editor.css';
+@import './components/profile.css';
 
 * {
   box-sizing: border-box;
