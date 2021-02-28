@@ -90,6 +90,7 @@
   transition: 0.3s ease;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #fileInfo .openFileElement {
@@ -97,12 +98,11 @@
 }
 
 #fileInfo article button {
-  width: 100%;
   background-color: var(--colorAccent);
   outline: none;
   border: none;
   margin: 0.25rem 0;
-  padding: 0.25rem 0;
+  padding: 0.25rem 3em;
   border-radius: 0.5rem;
   opacity: 0.75;
 }
@@ -142,6 +142,22 @@
 
 #imgInfo .openImgElement {
   display: block !important;
+}
+
+#imgInfo #imageInfo {
+  width: min(90vw, 500px);
+  padding: 2em;
+  border-radius: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#imgInfo #imageInfo h1 {
+  height: unset;
+  font-size: 2em;
+}
+
+#imgInfo #imageInfo h2 {
+  font-size: 1.5em;
 }
 
 @media screen and (min-width: 1200px) {
