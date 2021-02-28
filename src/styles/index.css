@@ -20,11 +20,16 @@
   --fontsize: 16px;
 }
 
-@import './components/header.css';
-@import './components/main.css';
+@import './components/header/home.css';
+@import './components/header/detail.css';
+@import './components/header/profile.css';
+@import './components/main/home.css';
+@import './components/main/detail.css';
+@import './components/main/profile.css';
+/* @import './components/main/home.css';
+@import './components/main/detail.css';
+@import './components/main/profile.css'; */
 @import './components/footer.css';
-@import './components/editor.css';
-@import './components/profile.css';
 
 * {
   box-sizing: border-box;

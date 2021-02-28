@@ -1,0 +1,126 @@
+:root {
+  --colorPrimary: #27272f;
+  --colorAccent: #ec904c;
+  --colorSoftWhite: #f5f5f5;
+  --textCol: #f5f5f5;
+  --textColLabel: #908e9b;
+  --textColPrim: #e1dfe9;
+  --sizeSm1: 0.25rem;
+  --sizeSm2: 0.375rem;
+  --sizeSm3: 0.5rem;
+  --sizeSm4: 0.75rem;
+  --sizeMd1: 1rem;
+  --sizeMd2: 1.25rem;
+  --sizeMd3: 1.5rem;
+  --sizeLg1: 2rem;
+  --sizeLg2: 3rem;
+  --sizeLg3: 4rem;
+  --fontsize: 16px;
+}
+
+/*************************************
+              Homepage 
+**************************************/
+
+header {
+  margin-bottom: 1em;
+}
+
+header h1 {
+  margin: 0 0 0.5em 0;
+}
+
+#searchHeader article {
+  width: calc(100%);
+  position: relative;
+  height: 40px;
+}
+
+#searchHeader article input[type='text'] {
+  width: 100%;
+  padding: 5px 10px 5px 1em;
+  height: 3em;
+  border: none;
+  border: 1px solid grey;
+  border-radius: 1.5em;
+  position: absolute;
+  right: 0;
+}
+
+#searchHeader article input[type='text']:focus {
+  border-radius: 1.5em;
+  outline: none;
+  border: 1.5px solid var(--colorAccent);
+}
+
+#searchHeader article button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 3em;
+  width: 3em;
+  outline: none;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+}
+
+#searchHeader article button::before {
+  content: '\f002';
+  font-family: 'FontAwesome';
+  font-size: var(--h2);
+  padding: 1em 0.7em;
+}
+
+#searchHeader article button:focus {
+  border-radius: 50%;
+  outline: none;
+  border: 1.5px solid var(--colorAccent);
+}
+
+header p {
+  margin: 1em 0;
+}
+
+@media screen and (min-width: 600px) {
+  #searchHeader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  header h1 {
+    height: 64px;
+    line-height: 2em;
+  }
+
+  #searchHeader article {
+    width: unset;
+    height: 64px;
+    left: unset;
+    display: grid;
+    place-items: center;
+  }
+
+  #searchHeader article input[type='text'] {
+    border-radius: 20px;
+    width: 225px;
+  }
+
+  #searchHeader article input[type='text']:focus-within {
+    width: 30vw;
+    max-width: 500px;
+    transition: 0.5s;
+  }
+
+  #searchHeader article button {
+    margin: auto;
+    top: 0;
+    bottom: 0;
+  }
+
+  #searchHeader p {
+    flex: 0 1 100%;
+  }
+}
