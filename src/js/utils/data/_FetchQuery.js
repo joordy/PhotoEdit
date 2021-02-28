@@ -23,10 +23,9 @@ export const fetchQuery = async (query) => {
     response = await getMyData(apiUrl)
     let filter = filterItems(response.results)
     let sortedData = sortItems(filter)
-    searchQuery(query)
-    // let writtenQuery = getQuery(query)
-    // console.log(writtenQuery)
-    // console.log(sort)
+
+    let textje = searchQuery(query)
+
     return await sortedData
   } else if (getVariable() == false) {
     // Basic fetch most popular images from unsplash as default.

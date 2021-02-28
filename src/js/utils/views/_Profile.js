@@ -11,6 +11,7 @@ import {
   Main,
   Text,
 } from '../components/elements/index'
+
 export const profileView = (body) => {
   return async () => {
     body.setAttribute('class', 'profilePage')
@@ -33,11 +34,12 @@ export const profileView = (body) => {
     const imgArticle = Article()
     const h1 = HeadingOne('John Doe')
     const img = Image(placeholder, 'profilePic')
-    const insta = Href('https://www.instagram.com', 'i')
-    const facebook = Href('https://www.instagram.com', 'b')
-    const dribbble = Href('https://www.instagram.com', 'c')
+    const insta = Href('https://www.instagram.com', '')
+    const twitter = Href('https://www.twitter.com', '')
+    const unsplash = Href('https://www.unsplash.com', '')
     const h2 = HeadingTwo('Saved collection')
     const div = Div()
+    const divSocial = Div()
     const button = Button('remove', 'removeImages')
     const text = Text('No saved images yet')
 
@@ -52,13 +54,14 @@ export const profileView = (body) => {
 
     personArticle.appendChild(img)
     personArticle.appendChild(h1)
-    personArticle.appendChild(insta)
-    personArticle.appendChild(facebook)
-    personArticle.appendChild(dribbble)
+    personArticle.appendChild(divSocial)
+    divSocial.appendChild(insta)
+    divSocial.appendChild(twitter)
+    divSocial.appendChild(unsplash)
 
     imgArticle.appendChild(h2)
-    imgArticle.appendChild(div)
     imgArticle.appendChild(button)
+    imgArticle.appendChild(div)
 
     // If else statement, to display text if localStorage is empty, or append the image with styling.
     if (props === null) {

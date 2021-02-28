@@ -1,10 +1,9 @@
 // import html2canvas from 'html2canvas'
+import { uniqueFilter } from '../helpers/index'
 import {
   Href,
-  Button,
+  Article,
   docTitle,
-  HeadingOne,
-  HeadingTwo,
   Header,
   Main,
 } from '../components/elements/index'
@@ -14,7 +13,6 @@ import {
   createCanvas,
   createInfo,
 } from '../components/index'
-import { uniqueFilter } from '../helpers/index'
 
 export const detailedView = (body) => {
   return async () => {
@@ -28,6 +26,7 @@ export const detailedView = (body) => {
 
     // Creating HTML elements
     const header = Header('detailHeader')
+    const article = Article()
     const main = Main('detailMain')
     const homeButton = Href('/', 'Back')
     const imgCanvas = await createCanvas(props)
@@ -40,8 +39,9 @@ export const detailedView = (body) => {
     body.appendChild(main)
 
     header.appendChild(homeButton)
-    header.appendChild(info)
-    header.appendChild(save)
+    header.appendChild(article)
+    article.appendChild(info)
+    article.appendChild(save)
 
     main.appendChild(imgCanvas)
     main.appendChild(filters)

@@ -1,4 +1,4 @@
-import { eventButton, userInput, fetchQuery } from '../data/index'
+import { userInput, fetchQuery } from '../data/index'
 import {
   createSearchHeader,
   createImg,
@@ -21,27 +21,27 @@ export const homeView = (body) => {
     body.appendChild(footer)
 
     // Fetch image data for events
-    const data = await fetchQuery()
+    const props = await fetchQuery()
 
     // Event listeners for search button and enter key
     const button = document.querySelector('#searchPhotos')
     button.addEventListener(
       'click',
-      (data) => {
-        userInput(data, body).then((data = data))
+      (props) => {
+        userInput(props, body).then((props = props))
       },
       false
     )
     const input = document.querySelector('#searchElement')
     input.addEventListener(
       'keyup',
-      (data) => {
-        userInput(data, body).then((data = data))
+      (props) => {
+        userInput(props, body).then((props = props))
       },
       false
     )
 
     // Add images to main section and footer to the page
-    createImg(data)
+    createImg(props)
   }
 }
