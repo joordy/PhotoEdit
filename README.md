@@ -6,7 +6,7 @@ In this course I'll learn how to create a single page web application without th
 
 ---
 
-## 🚀 **Live link**
+## 🌐 **Live link**
 
 The final result of this course can be viewed here: [wafs-jor.netlify.app](https://wafs-jor.netlify.app/)
 
@@ -14,7 +14,7 @@ The final result of this course can be viewed here: [wafs-jor.netlify.app](https
 
 ---
 
-## 🛠 **Features**
+## 🚀 **Features**
 
 My application contains different possibility's. For example, it is possible to search for specific photos using your own search term, select this photo, view all information about it, and edit the photo as desired.
 
@@ -42,6 +42,20 @@ src/
 | +-- index.css
 +-- index.html
 ```
+
+### Folders
+
+Every folder contains specific features. The **components** folder supplies the HTML elements for the application. The HTML elements are created in these folders. Larger code blocks are separate in this folder. Every other conceivable HTML element that is used is in the _elements_ folder. These are used throughout the application.
+
+The **config** folder contains all information about the API. Think of the API key and the different endpoints.
+
+The **data** folder ensures, among other things, that everything about API data and user data / input is processed. This includes the event handlers, various searches, localStorage and the search for a specific ID.
+
+The **helpers** folder contains various elements such as the fetch function, data filters, query injectors and image filters. These are used throughout the application in addition to the concept.
+
+The **router** folder contains 1 file, namely the router itself. The Navigo router is used here. Here, all possible pages are handled by the router.
+
+The **views** folder contains all pages that are rendered after the request from the router. The 4 pages retrieve all information from other files, in order to make it a whole.
 
 <!-- #### **Components**
 
@@ -136,6 +150,10 @@ To make use of my application I've used two differend
 - `https://api.unsplash.com/search/photos/?client_id=${API_KEY}&query=${SEARCH_QUERY}&per_page=33&order_by=popular `
 - `https://api.unsplash.com/photos/1gLdTsX3_70?client_id=${API_KEY}`
 
+### API Response
+
+After requesting the API you will receive an object with a lot of information about the photos. Below is described what all information means.
+
 ```js
 image = {
   alt_description:  ,           // Second description
@@ -168,7 +186,7 @@ image = {
 
 ---
 
-## 🔑 **Installation**
+## 💻 **Installation**
 
 ### Clone the repository
 
