@@ -10,6 +10,8 @@ In this course I'll learn how to create a single page web application without th
 
 The final result of this course can be viewed here: [wafs-jor.netlify.app](https://wafs-jor.netlify.app/)
 
+![Live Application](https://user-images.githubusercontent.com/48051912/109559822-78520600-7adb-11eb-88ed-619698296240.png)
+
 ---
 
 ## 🛠 **Features**
@@ -112,13 +114,13 @@ import {
 
 ## 📄 **Actor Diagram**
 
-![actor_diagram](https://user-images.githubusercontent.com/48051912/107958925-0047f400-6fa3-11eb-9809-fdd794db13c4.png)
+![actor](https://user-images.githubusercontent.com/48051912/109558849-34123600-7ada-11eb-8dbc-b3d23574f811.png)
 
 ---
 
 ## 📊 **Interaction Diagram**
 
-![interaction_diagram](https://user-images.githubusercontent.com/48051912/107957707-4308cc80-6fa1-11eb-818e-b49f500c4af7.png)
+![interaction](https://user-images.githubusercontent.com/48051912/109558866-3a081700-7ada-11eb-9e87-726e8949b048.png)
 
 ---
 
