@@ -44,8 +44,8 @@ export const profileView = (body) => {
     const button = Button('Remove items', 'removeImages')
 
     // Appending elements to the body, header and main
-    body.appendChild(header)
-    body.appendChild(main)
+    body.prepend(header)
+    header.after(main)
 
     header.appendChild(homeButton)
 

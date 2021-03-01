@@ -71,10 +71,12 @@ The **components/** folder consists of all kinds of small elements in the elemen
 
 ```js
 export const HeadingOne = (item) => {
-  let element = document.createElement('h1')
-  let textnode = document.createTextNode(item)
-  element.appendChild(textnode)
-  return element
+  const elem = document.createElement('h1')
+  const textnode = document.createTextNode(item)
+
+  elem.appendChild(textnode)
+
+  return elem
 }
 ```
 
@@ -123,6 +125,14 @@ import {
 ## 📈 **Datasets**
 
 For this project I made use of the Unsplash API for Developers. The API gives access to the world largest open collection of high quality photos, totally free. With using different querys, like searching, popular, etc etc, the user can receive a lot of information about the image. All the available information contains:
+
+### Used endpoints
+
+To make use of my application I've used two differend
+
+- `https://api.unsplash.com/photos/?client_id=${API_KEY}&per_page=33&order_by=popular`
+- `https://api.unsplash.com/search/photos/?client_id=${API_KEY}&query=${SEARCH_QUERY}&per_page=33&order_by=popular `
+- `https://api.unsplash.com/photos/1gLdTsX3_70?client_id=${API_KEY}`
 
 ```js
 image = {
@@ -186,17 +196,6 @@ image = {
 
 ## 🔍 **Sources**
 
-<!-- - Source (n.d.) Writer, Source. Retrieved February 01, 2020, from weblink -->
-
-<!-- - https://unsplash.com/developers
-- https://unsplash.com/documentation
-- https://github.com/krasimir/navigo
-- https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
-- https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild
-- https://www.digitalocean.com/community/tutorials/html-preload-prefetch
-- https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
-- https://www.encodedna.com/html5/canvas/add-image-to-html5-canvas-using-javascript.htm -->
-
 - Unsplash. (n.d.). Unsplash Image API | Free HD Photo API. Unsplash. Retrieved February 1, 2021, from [https://unsplash.com/developers](https://unsplash.com/developers)
 - Unsplash. (n.d.-a). API Documentation | Free HD Photo API. Retrieved February 1, 2021, from [https://unsplash.com/documentation](https://unsplash.com/documentation)
 - MDN.. (2021, February 19). Node.appendChild() - Web APIs | MDN. Retrieved February 3, 2021, from [https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
@@ -205,12 +204,13 @@ image = {
 - Krasimir. (n.d.). krasimir/navigo. GitHub. Retrieved February 15, 2021, from [https://github.com/krasimir/navigo](https://github.com/krasimir/navigo)
 - Banik, A. (n.d.). Add Image to HTML5 Canvas using JavaScript. Encodedna. Retrieved February 15, 2021, from [https://www.encodedna.com/html5/canvas/add-image-to-html5-canvas-using-javascript.htm](https://www.encodedna.com/html5/canvas/add-image-to-html5-canvas-using-javascript.htm)
 - Morales, A. J. (2021, January 19). How To Use Preload and Prefetch in HTML to Load Assets. DigitalOcean. Retrieved February 15, 2021, from [https://www.digitalocean.com/community/tutorials/html-preload-prefetch](https://www.digitalocean.com/community/tutorials/html-preload-prefetch)
+- Netlify. (n.d.). Redirects and rewrites. Netlify Docs. Retrieved February 18, 2021, from [https://docs.netlify.com/routing/redirects/](https://docs.netlify.com/routing/redirects/)
 
 ---
 
 ## 🔐 **License**
 
-This is a repository which is licensed as MIT. Developed by Jordy Fronik ©️ 2021.
+This is a repository which is licensed as [MIT](https://github.com/joordy/PhotoPaint/blob/master/LICENSE). Developed by Jordy Fronik ©️ 2021.
 
 ---
 

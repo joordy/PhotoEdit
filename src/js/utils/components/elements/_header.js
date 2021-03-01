@@ -1,7 +1,5 @@
-export const Header = (idName) => {
+export const Header = () => {
   const elem = document.createElement('header')
-
-  elem.setAttribute('id', idName)
 
   return elem
 }

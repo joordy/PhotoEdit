@@ -1,7 +1,5 @@
-export const Canvas = (canvClass) => {
+export const Canvas = () => {
   const elem = document.createElement('canvas')
-
-  elem.setAttribute('class', canvClass)
 
   return elem
 }

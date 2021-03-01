@@ -20,7 +20,7 @@ export const detailedView = (body) => {
     body.setAttribute('class', 'detailPage')
     // Get Image details from clicked link
     const props = await uniqueFilter()
-    console.log(props)
+
     // Change doc title
     const pageTitle = docTitle('Editor | PhotoPaint — Jor')
 
@@ -34,9 +34,9 @@ export const detailedView = (body) => {
     const info = createInfo(props)
     const save = createSave(props)
 
-    // Appending elements to the body, header and main
-    body.appendChild(header)
-    body.appendChild(main)
+    // Appending elements to the body, header and main, using prepend & after for semantical html
+    body.prepend(header)
+    header.after(main)
 
     header.appendChild(homeButton)
     header.appendChild(article)

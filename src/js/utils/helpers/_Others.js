@@ -16,7 +16,7 @@ export function getVariable() {
 
 // Render searched query on page
 export const getQuery = (writtenQuery) => {
-  let searchText = document.querySelector('#searchQuery')
+  let searchText = document.querySelector('.searchQuery')
   searchText.innerHTML = ''
 
   let textText = document.createTextNode(writtenQuery)

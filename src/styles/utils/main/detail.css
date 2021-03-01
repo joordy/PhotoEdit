@@ -92,7 +92,7 @@
   transform: translateX(-50%);
   font-family: FontAwesome;
   content: '\f302';
-  color: var(--colorSoftWhite);
+  color: var(--colorAccent);
   line-height: 2rem;
   transition: 0.3s ease;
 }
@@ -107,6 +107,8 @@
 
 .detailPage section details[open] summary:before {
   background-color: var(--colorAccent);
+  color: var(--colorSoftWhite);
+
   opacity: 1;
 }
 

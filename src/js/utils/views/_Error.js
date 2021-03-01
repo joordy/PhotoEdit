@@ -20,7 +20,8 @@ export const errorView = (body) => {
     const text = Text('The page you requested for can not be found')
     const back = Href('/', 'Return to home')
 
-    body.appendChild(element)
+    // Appending elements to the body, using prepend & after for semantical html
+    body.prepend(element)
 
     element.appendChild(h1)
     element.appendChild(text)
