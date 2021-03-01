@@ -102,9 +102,10 @@
   outline: none;
   border: none;
   margin: 0.25rem 0;
-  padding: 0.25rem 3em;
+  padding: 0.5rem 3em;
   border-radius: 0.5rem;
   opacity: 0.75;
+  width: 100%;
 }
 
 #fileInfo article button:hover {
@@ -151,7 +152,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#imgInfo #imageInfo h1 {
+#imgInfo article h1 {
   height: unset;
   font-size: 2em;
 }
@@ -167,7 +168,7 @@
     background-color: #1b1b22;
     margin: 0;
   }
-  .detailPage #detailHeader #fileInfo {
+  .detailPage header #fileInfo {
     width: unset;
     height: unset;
     border-radius: unset;
@@ -175,10 +176,10 @@
     margin: unset;
     background-color: unset;
   }
-  .detailPage #detailHeader #fileInfo:before {
+  .detailPage header #fileInfo:before {
     content: '';
   }
-  .detailPage #detailHeader #fileInfo article {
+  .detailPage header #fileInfo article {
     width: unset;
     display: flex;
     position: unset;
@@ -187,7 +188,7 @@
     background-color: unset;
     padding: unset;
   }
-  .detailPage #detailHeader #fileInfo article button {
+  .detailPage header #fileInfo article button {
     padding: unset;
     margin: unset;
     margin-left: 1rem;

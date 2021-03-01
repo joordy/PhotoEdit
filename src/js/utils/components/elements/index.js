@@ -17,7 +17,7 @@ import { Label } from './_label'
 import { Section } from './_section'
 import { Summary } from './_summary'
 import { Main } from './_main'
-import { Text } from './_Text'
+import { Text } from './_text'
 
 export {
   Href,

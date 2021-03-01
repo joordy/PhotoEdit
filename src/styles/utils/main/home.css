@@ -48,7 +48,7 @@ body {
 .homePage main a:nth-child(2n + 3) {
   grid-row-start: span 2;
 }
-.searchedImage {
+.homePage main a img {
   width: 100%;
   height: 100%;
   object-fit: cover;

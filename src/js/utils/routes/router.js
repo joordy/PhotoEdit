@@ -1,10 +1,9 @@
 import Navigo from 'navigo'
 import { detailedView, homeView, profileView, errorView } from '../views/index'
 
-const router = new Navigo('/', false)
-
 export const Router = () => {
-  const body = document.getElementById('app')
+  const router = new Navigo('/', false)
+  const body = document.querySelector('body')
 
   try {
     router

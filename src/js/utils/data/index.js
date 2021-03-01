@@ -1,6 +1,6 @@
-import { checkID } from './_SearchID'
-import { fetchQuery } from './_FetchQuery'
-import { userInput } from './_Events'
-import { LocalStorageSetup } from './_LocalStorage'
+import { checkID } from './_searchID'
+import { fetchQuery } from './_fetchQuery'
+import { userInput } from './_events'
+import { LocalStorageSetup } from './_localStorage'
 
 export { checkID, fetchQuery, userInput, LocalStorageSetup }

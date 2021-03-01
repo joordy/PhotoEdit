@@ -1,7 +1,7 @@
 import { Href, Image, Main } from './elements/index'
 
 export const createImg = (data) => {
-  const elem = Main('imageWrapper')
+  const elem = document.querySelector('#imageWrapper')
 
   data.forEach((item) => {
     const href = Href(`/image/${item.id}`, '')

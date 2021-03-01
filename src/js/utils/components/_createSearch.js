@@ -17,7 +17,7 @@ export const createSearchHeader = () => {
   const text = Text('')
 
   // Set attributes needed for other JS files
-  text.setAttribute('id', 'searchQuery')
+  text.setAttribute('class', 'searchQuery')
 
   // Appending elements inside HTML
   header.appendChild(h1)

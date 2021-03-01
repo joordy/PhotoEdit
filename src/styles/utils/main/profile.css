@@ -101,11 +101,14 @@
   height: 40px;
   border-radius: 25px;
   transition: 0.3s;
+  outline: none;
 }
 
 .profilePage main article:nth-child(2) button:hover {
   cursor: pointer;
   transform: scale(1.05);
+  background-color: #666;
+  color: #fff;
 }
 
 .profilePage main article:nth-child(2) div {

@@ -1,7 +1,5 @@
-export const Main = (className) => {
+export const Main = () => {
   const elem = document.createElement('main')
-
-  elem.setAttribute('id', className)
 
   return elem
 }

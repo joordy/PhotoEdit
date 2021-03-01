@@ -4,6 +4,7 @@ import {
   createImg,
   createFooter,
 } from '../components/index'
+import { Main } from '../components/elements/_main'
 
 export const homeView = (body) => {
   return async () => {
@@ -14,14 +15,16 @@ export const homeView = (body) => {
     const props = await fetchQuery()
 
     // Creating HTML elements
-    const header = createSearchHeader(body)
+    const header = createSearchHeader()
+    const main = Main()
     const footer = createFooter()
-    const main = createImg(props)
+
+    main.setAttribute('id', 'imageWrapper')
 
     // Appending elements to the body
-    body.appendChild(header)
-    body.appendChild(main)
-    body.appendChild(footer)
+    body.prepend(header)
+    header.after(main)
+    main.after(footer)
 
     // Event listeners for search button and enter key
     const button = document.querySelector('#searchPhotos')
@@ -41,5 +44,7 @@ export const homeView = (body) => {
       },
       false
     )
+
+    createImg(props)
   }
 }
