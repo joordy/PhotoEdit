@@ -114,29 +114,3 @@ export const detailedView = (body) => {
     })
   }
 }
-
-// const insertHeader = (props) => {
-//   if (!props.description) {
-//     let h1 = HeadingOne('Unknown Title')
-//     return h1
-//   } else {
-//     let h1 = HeadingOne(props.description)
-//     return h1
-//   }
-// }
-
-// const bttn = document.querySelector('#downloadImg')
-
-// bttn.addEventListener('click', function () {
-//   const downloadElement = document.createElement('a')
-//   body.appendChild(downloadElement)
-//   downloadElement.href = CanVas.toDataURL()
-//   downloadElement.download = 'downloaded_image_jorDev.jpg'
-//   downloadElement.click()
-//   body.removeChild(downloadElement)
-//   // html2canvas(document.querySelector('#export')).then((canvas) => {
-//   //   console.log(canvas)
-//   //   console.log(canvas.toDataURL('image/png'))
-//   //   document.body.appendChild(canvas)
-//   // })
-// })

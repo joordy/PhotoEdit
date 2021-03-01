@@ -16,18 +16,11 @@ export function getVariable() {
 
 // Render searched query on page
 export const getQuery = (writtenQuery) => {
-  const header = document.querySelector('#searchHeader')
-  const searchQuery = document.createElement('p')
-  const queryText = document.createTextNode(`Zoekterm: ${writtenQuery}`)
+  let searchText = document.querySelector('#searchQuery')
+  searchText.innerHTML = ''
 
-  searchQuery.setAttribute('id', 'searchQuery')
-
-  header.appendChild(searchQuery)
-  searchQuery.remove()
-  searchQuery.appendChild(queryText)
-  // let searchQuery = document.querySelector('#searchQuery')
-  // searchQuery.innerHTML = `Zoekterm: ${writtenQuery}`
-  // console.log(`Searched with the Query: ${writtenQuery}`)
+  let textText = document.createTextNode(writtenQuery)
+  searchText.appendChild(textText)
 }
 
 // Deletes previous searched images

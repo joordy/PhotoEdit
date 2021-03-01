@@ -4,24 +4,24 @@ import {
   createImg,
   createFooter,
 } from '../components/index'
-import { Main } from '../components/elements/_main'
 
 export const homeView = (body) => {
   return async () => {
     // Add Class to specific page, for styling unique content
     body.setAttribute('class', 'homePage')
 
-    // Creating HTML elements
-    const header = createSearchHeader(body)
-    const main = Main('imageWrapper')
-    const footer = createFooter()
-
-    // Appending elements to the body
-    body.appendChild(main)
-    body.appendChild(footer)
-
     // Fetch image data for events
     const props = await fetchQuery()
+
+    // Creating HTML elements
+    const header = createSearchHeader(body)
+    const footer = createFooter()
+    const main = createImg(props)
+
+    // Appending elements to the body
+    body.appendChild(header)
+    body.appendChild(main)
+    body.appendChild(footer)
 
     // Event listeners for search button and enter key
     const button = document.querySelector('#searchPhotos')
@@ -32,6 +32,7 @@ export const homeView = (body) => {
       },
       false
     )
+
     const input = document.querySelector('#searchElement')
     input.addEventListener(
       'keyup',
@@ -40,8 +41,5 @@ export const homeView = (body) => {
       },
       false
     )
-
-    // Add images to main section and footer to the page
-    createImg(props)
   }
 }

@@ -1,6 +1,7 @@
 export const Header = (idName) => {
-  // Create Header
-  let element = document.createElement('header')
-  element.setAttribute('id', idName)
-  return element
+  const elem = document.createElement('header')
+
+  elem.setAttribute('id', idName)
+
+  return elem
 }

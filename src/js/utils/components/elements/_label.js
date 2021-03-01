@@ -1,8 +1,9 @@
 export const Label = (labelText) => {
-  let label = document.createElement('label')
-  let textNode = document.createTextNode(labelText)
+  const elem = document.createElement('label')
+  const textNode = document.createTextNode(labelText)
 
-  label.appendChild(textNode)
-  label.innerHTML.charAt(0).toUpperCase()
-  return label
+  elem.appendChild(textNode)
+  elem.innerHTML.charAt(0).toUpperCase()
+
+  return elem
 }

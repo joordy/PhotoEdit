@@ -5,5 +5,6 @@ export const createFooter = () => {
   const href = Href('/profile', '')
 
   footer.appendChild(href)
+
   return footer
 }

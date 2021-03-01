@@ -1,8 +1,9 @@
 export const Button = (item, ID) => {
-  let element = document.createElement('button')
-  let textnode = document.createTextNode(item)
-  element.id = ID
+  const elem = document.createElement('button')
+  const textnode = document.createTextNode(item)
 
-  element.appendChild(textnode)
-  return element
+  elem.setAttribute('id', ID)
+  elem.appendChild(textnode)
+
+  return elem
 }

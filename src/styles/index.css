@@ -23,6 +23,7 @@
 @import './utils/header/home.css';
 @import './utils/header/detail.css';
 @import './utils/header/profile.css';
+@import './utils/header/error.css';
 @import './utils/main/home.css';
 @import './utils/main/detail.css';
 @import './utils/main/profile.css';

@@ -1,4 +1,5 @@
 export const Article = () => {
-  let article = document.createElement('article')
-  return article
+  const elem = document.createElement('article')
+
+  return elem
 }

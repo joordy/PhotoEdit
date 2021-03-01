@@ -28,20 +28,20 @@ export const profileView = (body) => {
 
     // Creating HTML elements
     const header = Header('profileheader')
-    const homeButton = Href('/', 'back')
     const main = Main('profile')
     const personArticle = Article()
     const imgArticle = Article()
     const h1 = HeadingOne('John Doe')
-    const img = Image(placeholder, 'profilePic')
-    const insta = Href('https://www.instagram.com', '')
-    const twitter = Href('https://www.twitter.com', '')
-    const unsplash = Href('https://www.unsplash.com', '')
     const h2 = HeadingTwo('Saved collection')
     const div = Div()
     const divSocial = Div()
-    const button = Button('remove', 'removeImages')
+    const img = Image(placeholder, 'profilePic')
     const text = Text('No saved images yet')
+    const homeButton = Href('/', 'back')
+    const insta = Href('https://www.instagram.com', '')
+    const twitter = Href('https://www.twitter.com', '')
+    const unsplash = Href('https://www.unsplash.com', '')
+    const button = Button('Remove items', 'removeImages')
 
     // Appending elements to the body, header and main
     body.appendChild(header)
@@ -77,15 +77,12 @@ export const profileView = (body) => {
     }
 
     const removeImagesBtn = document.querySelector('#removeImages')
-    console.log(removeImagesBtn)
 
+    // Remove localStorage when pressing button
     if (!removeImagesBtn) {
-      console.log('its tru  e')
       console.log(!removeImagesBtn)
     } else {
-      console.log('test')
       removeImagesBtn.addEventListener('click', function () {
-        console.log('click')
         localStorage.clear()
         location.reload(true)
       })

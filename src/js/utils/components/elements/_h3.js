@@ -1,6 +1,8 @@
 export const HeadingThree = (item) => {
-  let element = document.createElement('h3')
-  let textnode = document.createTextNode(item)
-  element.appendChild(textnode)
-  return element
+  const elem = document.createElement('h3')
+  const textnode = document.createTextNode(item)
+
+  elem.appendChild(textnode)
+
+  return elem
 }

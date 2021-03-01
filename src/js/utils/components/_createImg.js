@@ -1,18 +1,19 @@
-import { Image } from './elements/index'
+import { Href, Image, Main } from './elements/index'
 
 export const createImg = (data) => {
-  const element = document.querySelector('#imageWrapper')
+  const elem = Main('imageWrapper')
 
   data.forEach((item) => {
-    const tag = document.createElement('a')
-    tag.setAttribute('data-navigo', '')
-    tag.href = `/image/${item.id}`
-    tag.id = `href`
-    tag.rel = 'prefetch'
+    const href = Href(`/image/${item.id}`, '')
+    href.setAttribute('data-navigo', '')
+    href.setAttribute('id', 'href')
+    href.setAttribute('rel', 'prefetch')
 
     const image = Image(item.urls.regular, 'searchedImage')
 
-    tag.appendChild(image)
-    element.appendChild(tag)
+    href.appendChild(image)
+    elem.appendChild(href)
   })
+
+  return elem
 }
