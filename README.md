@@ -197,6 +197,8 @@ image = {
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 - https://www.encodedna.com/html5/canvas/add-image-to-html5-canvas-using-javascript.htm -->
 
+- Unsplash. (n.d.). Unsplash Image API | Free HD Photo API. Unsplash. Retrieved February 1, 2021, from [https://unsplash.com/developers](https://unsplash.com/developers)
+- Unsplash. (n.d.-a). API Documentation | Free HD Photo API. Retrieved February 1, 2021, from [https://unsplash.com/documentation](https://unsplash.com/documentation)
 - MDN.. (2021, February 19). Node.appendChild() - Web APIs | MDN. Retrieved February 3, 2021, from [https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
 - MDN.. (2021, February 19). Node.removeChild() Web APIs | MDN. Retrieved February 9, 2021, from [https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
 - MDN.. (2021, February 19). Window.localStorage - Web APIs | MDN. Retrieved February 15, 2021, from [https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
