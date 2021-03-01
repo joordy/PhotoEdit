@@ -83,16 +83,17 @@
 
 .detailPage main section details summary:before {
   position: absolute;
-  background-color: var(--colorSoftWhite);
+  background-color: #666666;
+  border: 1px solid #666666;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  bottom: 5px;
+  bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
   font-family: FontAwesome;
   content: '\f302';
-  color: var(--colorAccent);
+  /* color: var(--colorAccent); */
   line-height: 2rem;
   transition: 0.3s ease;
 }
@@ -106,9 +107,10 @@
 }
 
 .detailPage section details[open] summary:before {
+  border: 1px solid var(--colorAccent);
+
   background-color: var(--colorAccent);
   color: var(--colorSoftWhite);
-
   opacity: 1;
 }
 

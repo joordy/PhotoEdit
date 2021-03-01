@@ -47,7 +47,7 @@ export const detailedView = (body) => {
     main.appendChild(filters)
 
     // Select canvas from HTML, and apply filters to the canvas section.
-    const CanVas = document.querySelector('.imageCanvas')
+    let CanVas = document.querySelector('canvas')
     let applyControls = document.querySelectorAll('input[type=range]')
     let applyFilters = document.querySelectorAll('#applyFilter')
     let computedFilters
