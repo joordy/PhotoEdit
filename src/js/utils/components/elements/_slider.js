@@ -1,14 +1,14 @@
 export const inputSlider = (item) => {
-  let input = document.createElement('input')
-  input.type = item[0]
+  const elem = document.createElement('input')
 
-  input.setAttribute('min', item[1])
-  input.setAttribute('max', item[2])
-  input.setAttribute('value', item[3])
-  input.setAttribute('step', item[4])
-  input.setAttribute('data-filter', item[5])
-  input.setAttribute('data-scale', item[6])
-  input.setAttribute('id', item[7])
+  elem.type = item[0]
+  elem.setAttribute('min', item[1])
+  elem.setAttribute('max', item[2])
+  elem.setAttribute('value', item[3])
+  elem.setAttribute('step', item[4])
+  elem.setAttribute('data-filter', item[5])
+  elem.setAttribute('data-scale', item[6])
+  elem.setAttribute('id', item[7])
 
-  return input
+  return elem
 }

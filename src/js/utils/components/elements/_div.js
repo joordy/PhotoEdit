@@ -1,4 +1,5 @@
 export const Div = () => {
-  let div = document.createElement('div')
-  return div
+  const elem = document.createElement('div')
+
+  return elem
 }

@@ -5,7 +5,6 @@ import { createImg } from './_createImg'
 import { createSave } from './_createSave'
 import { createInfo } from './_createInfo'
 import { createSearchHeader } from './_createSearch'
-import { searchQuery } from './_searchQuery'
 
 export {
   createCanvas,
@@ -15,5 +14,4 @@ export {
   createSave,
   createInfo,
   createSearchHeader,
-  searchQuery,
 }

@@ -1,5 +1,5 @@
 export const Section = () => {
-  const element = document.createElement('section')
+  const elem = document.createElement('section')
 
-  return element
+  return elem
 }

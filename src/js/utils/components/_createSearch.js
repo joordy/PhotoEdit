@@ -7,7 +7,7 @@ import {
   Text,
 } from './elements/index'
 
-export const createSearchHeader = (body) => {
+export const createSearchHeader = () => {
   // Create all HTML elements for searchbar
   const header = Header('searchHeader')
   const h1 = HeadingOne('Discover')
@@ -20,12 +20,12 @@ export const createSearchHeader = (body) => {
   text.setAttribute('id', 'searchQuery')
 
   // Appending elements inside HTML
-  body.appendChild(header)
-
   header.appendChild(h1)
   header.appendChild(article)
   header.appendChild(text)
 
   article.appendChild(input)
   article.appendChild(button)
+
+  return header
 }

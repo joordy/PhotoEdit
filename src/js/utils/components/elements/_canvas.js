@@ -1,30 +1,7 @@
 export const Canvas = (canvClass) => {
-  let element = document.createElement('canvas')
-  element.setAttribute('class', canvClass)
+  const elem = document.createElement('canvas')
 
-  // // element.src = item
-  // return element
+  elem.setAttribute('class', canvClass)
 
-  return element
+  return elem
 }
-
-// let image = document.createElement('img')
-// image.setAttribute('class', imgClass)
-// image.src = source
-
-// drawCanvas(element, image)
-
-// const drawCanvas = (element, image) => {
-//   var ctx = element.getContext('2d')
-
-//   element.width = image.width
-//   element.height = image.height
-
-//   ctx.drawImage(image, 0, 0)
-// }
-// // export const img = (item, className) => {
-// //   let element = document.createElement('img')
-// //   element.setAttribute('class', className)
-// //   element.src = item
-// //   return element
-// // }

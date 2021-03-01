@@ -1,4 +1,5 @@
 export const Details = () => {
-  const element = document.createElement('details')
-  return element
+  const elem = document.createElement('details')
+
+  return elem
 }

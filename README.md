@@ -188,12 +188,21 @@ image = {
 
 <!-- - Source (n.d.) Writer, Source. Retrieved February 01, 2020, from weblink -->
 
+<!-- - https://unsplash.com/developers
 - https://unsplash.com/documentation
-- https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
 - https://github.com/krasimir/navigo
+- https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
 - https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild
-
 - https://www.digitalocean.com/community/tutorials/html-preload-prefetch
+- https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+- https://www.encodedna.com/html5/canvas/add-image-to-html5-canvas-using-javascript.htm -->
+
+- MDN.. (2021, February 19). Node.appendChild() - Web APIs | MDN. Retrieved February 3, 2021, from [https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
+- MDN.. (2021, February 19). Node.removeChild() Web APIs | MDN. Retrieved February 9, 2021, from [https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
+- MDN.. (2021, February 19). Window.localStorage - Web APIs | MDN. Retrieved February 15, 2021, from [https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+- Krasimir. (n.d.). krasimir/navigo. GitHub. Retrieved February 15, 2021, from [https://github.com/krasimir/navigo](https://github.com/krasimir/navigo)
+- Banik, A. (n.d.). Add Image to HTML5 Canvas using JavaScript. Encodedna. Retrieved February 15, 2021, from [https://www.encodedna.com/html5/canvas/add-image-to-html5-canvas-using-javascript.htm](https://www.encodedna.com/html5/canvas/add-image-to-html5-canvas-using-javascript.htm)
+- Morales, A. J. (2021, January 19). How To Use Preload and Prefetch in HTML to Load Assets. DigitalOcean. Retrieved February 15, 2021, from [https://www.digitalocean.com/community/tutorials/html-preload-prefetch](https://www.digitalocean.com/community/tutorials/html-preload-prefetch)
 
 ---
 

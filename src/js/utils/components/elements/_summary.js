@@ -1,8 +1,8 @@
 export const Summary = (filterItem) => {
-  const summary = document.createElement('summary')
-  const summaryText = document.createTextNode(filterItem)
+  const elem = document.createElement('summary')
+  const textNode = document.createTextNode(filterItem)
 
-  summary.appendChild(summaryText)
+  elem.appendChild(textNode)
 
-  return summary
+  return elem
 }

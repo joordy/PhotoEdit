@@ -1,10 +1,10 @@
 export const Href = (link, item) => {
-  let element = document.createElement('a')
-  let textnode = document.createTextNode(item)
+  const elem = document.createElement('a')
+  const textnode = document.createTextNode(item)
 
-  element.href = link
-  element.rel = 'prefetch'
-  element.appendChild(textnode)
+  elem.setAttribute('href', link)
+  elem.setAttribute('rel', 'prefetch')
+  elem.appendChild(textnode)
 
-  return element
+  return elem
 }

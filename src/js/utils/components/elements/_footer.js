@@ -1,4 +1,5 @@
 export const Footer = () => {
-  const footerEl = document.createElement('footer')
-  return footerEl
+  const elem = document.createElement('footer')
+
+  return elem
 }

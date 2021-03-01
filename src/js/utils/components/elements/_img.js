@@ -1,6 +1,8 @@
 export const Image = (item, className) => {
-  let element = document.createElement('img')
-  element.setAttribute('class', className)
-  element.src = item
-  return element
+  const elem = document.createElement('img')
+
+  elem.setAttribute('class', className)
+  elem.setAttribute('src', item)
+
+  return elem
 }
