@@ -32,6 +32,7 @@ export const homeView = (body) => {
       },
       false
     )
+
     const input = document.querySelector('#searchElement')
     input.addEventListener(
       'keyup',
