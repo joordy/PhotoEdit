@@ -87,7 +87,6 @@ export const detailedView = (body) => {
 
     // Save image element with CSS styles to localStorage
     saveBtn.addEventListener('click', (e) => {
-      console.log('save')
       let oldItems = JSON.parse(localStorage.getItem('images')) || []
 
       let newItem = {
@@ -98,7 +97,6 @@ export const detailedView = (body) => {
       oldItems.push(newItem)
 
       localStorage.setItem('images', JSON.stringify(oldItems))
-      console.log(JSON.parse(localStorage.getItem('images')))
     })
 
     // Toggle button to open div with buttons.

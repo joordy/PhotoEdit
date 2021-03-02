@@ -8,9 +8,9 @@ In this course I'll learn how to create a single page web application without th
 
 ## 🌐 **Live link**
 
-The final result of this course can be viewed here: [wafs-jor.netlify.app](https://wafs-jor.netlify.app/)
+The final result of this course can be viewed here: [wafs-jor.app](https://wafs-jor.netlify.app/)
 
-![Live Application](https://user-images.githubusercontent.com/48051912/109559822-78520600-7adb-11eb-88ed-619698296240.png)
+![Live Application](https://user-images.githubusercontent.com/48051912/109634109-2647c980-7b49-11eb-90e0-978e1342978e.png)
 
 ---
 
@@ -43,7 +43,7 @@ src/
 +-- index.html
 ```
 
-### Folders
+### **Utils folder explanation**
 
 Every folder contains specific features. The **components** folder supplies the HTML elements for the application. The HTML elements are created in these folders. Larger code blocks are separate in this folder. Every other conceivable HTML element that is used is in the _elements_ folder. These are used throughout the application.
 
@@ -56,30 +56,6 @@ The **helpers** folder contains various elements such as the fetch function, dat
 The **router** folder contains 1 file, namely the router itself. The Navigo router is used here. Here, all possible pages are handled by the router.
 
 The **views** folder contains all pages that are rendered after the request from the router. The 4 pages retrieve all information from other files, in order to make it a whole.
-
-<!-- #### **Components**
-
-The **components/** folder consists of all kinds of small elements in the elements / folder, which enable me to create HTML elements in JavaScript. Larger blocks of HTML are in the root of the **components/** folder.
-
-#### **Config**
-
-lorem ipsum
-
-#### **Data**
-
-lorem ipsum
-
-#### **Helpers**
-
-lorem ipsum
-
-#### **Routes**
-
-lorem ipsum
-
-#### **Views**
-
-lorem ipsum -->
 
 ### **Custom components**
 
@@ -128,13 +104,13 @@ import {
 
 ## 📄 **Actor Diagram**
 
-![actor](https://user-images.githubusercontent.com/48051912/109558849-34123600-7ada-11eb-8dbc-b3d23574f811.png)
+![actorNew](https://user-images.githubusercontent.com/48051912/109633318-41660980-7b48-11eb-9a91-0fb851021b6e.png)
 
 ---
 
 ## 📊 **Interaction Diagram**
 
-![interaction](https://user-images.githubusercontent.com/48051912/109558866-3a081700-7ada-11eb-9e87-726e8949b048.png)
+![interactionNew](https://user-images.githubusercontent.com/48051912/109633321-42973680-7b48-11eb-8488-04ce0be125a9.png)
 
 ---
 

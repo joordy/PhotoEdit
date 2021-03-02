@@ -65,7 +65,6 @@ export const profileView = (body) => {
 
     // If else statement, to display text if localStorage is empty, or append the image with styling.
     if (props === null) {
-      console.log(true)
       div.appendChild(text)
       button.setAttribute('disabled', '')
     } else {
@@ -79,9 +78,7 @@ export const profileView = (body) => {
     const removeImagesBtn = document.querySelector('#removeImages')
 
     // Remove localStorage when pressing button
-    if (!removeImagesBtn) {
-      console.log(!removeImagesBtn)
-    } else {
+    if (typeof removeImagesBtn != 'undefined' && removeImagesBtn != null) {
       removeImagesBtn.addEventListener('click', function () {
         localStorage.clear()
         location.reload(true)
