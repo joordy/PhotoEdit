@@ -1,12 +1,12 @@
-import { setVariable } from './_others'
-import { getVariable } from './_others'
-import { clicked } from './_others'
-import { getMyData } from './_fetcher'
-import { getQuery } from './_others'
-import { deleteResults } from './_others'
-import { uniqueFilter } from './_filters'
-import { filterItems } from './_filters'
-import { sortItems } from './_filters'
+import { setVariable } from './_Others'
+import { getVariable } from './_Others'
+import { clicked } from './_Others'
+import { getMyData } from './_Fetcher'
+import { getQuery } from './_Others'
+import { deleteResults } from './_Others'
+import { uniqueFilter } from './_Filters'
+import { filterItems } from './_Filters'
+import { sortItems } from './_Filters'
 
 export {
   setVariable,

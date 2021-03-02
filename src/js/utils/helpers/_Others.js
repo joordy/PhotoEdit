@@ -1,8 +1,6 @@
 // Variable to check if search button is clicked
-export let clicked = false
-
-// Variable to check if search button is clicked
-// export default clicked
+let clicked = false
+export default clicked
 
 // Updatable click variable
 export function setVariable(newValue) {

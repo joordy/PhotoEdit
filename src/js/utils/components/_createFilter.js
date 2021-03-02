@@ -6,7 +6,7 @@ import {
   Section,
   Summary,
 } from './elements/index'
-import { filterElements } from '../helpers/_others'
+import { filterElements } from '../helpers/_Others'
 
 export const createFilter = (content) => {
   const section = Section()
