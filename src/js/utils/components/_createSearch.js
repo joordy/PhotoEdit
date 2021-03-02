@@ -10,19 +10,19 @@ import {
 export const createSearchHeader = () => {
   // Create all HTML elements for searchbar
   const header = Header('searchHeader')
-  const h1 = HeadingOne('Discover')
+  const h1 = HeadingOne('PhotoPaint')
   const article = Article()
   const button = Button('', 'searchPhotos')
   const input = Input('text', 'searchElement', `Search free photo's`)
-  const text = Text('')
+  // const text = Text('')
 
   // Set attributes needed for other JS files
-  text.setAttribute('class', 'searchQuery')
+  // text.setAttribute('class', 'searchQuery')
 
   // Appending elements inside HTML
   header.appendChild(h1)
   header.appendChild(article)
-  header.appendChild(text)
+  // header.appendChild(text)
 
   article.appendChild(input)
   article.appendChild(button)

@@ -9,14 +9,14 @@ export const userInput = async (data) => {
     setVariable(true)
     data = await fetchQuery(query)
     deleteResults()
-    const el = createImg(data)
-    return [data, el]
+    createImg(data)
+    return data
   } else {
     let query = document.querySelector('#searchElement').value
     setVariable(true)
     data = await fetchQuery(query)
     deleteResults()
-    const el = createImg(data)
-    return [data, el]
+    createImg(data)
+    return data
   }
 }

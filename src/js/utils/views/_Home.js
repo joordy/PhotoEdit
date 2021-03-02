@@ -36,6 +36,7 @@ export const homeView = (body) => {
       false
     )
 
+    // Event listeners for search button and enter key
     const input = document.querySelector('#searchElement')
     input.addEventListener(
       'keyup',
@@ -44,7 +45,7 @@ export const homeView = (body) => {
       },
       false
     )
-
+    // Append image to main section
     createImg(props)
   }
 }

@@ -1,8 +1,8 @@
 // Variable to check if search button is clicked
-let clicked = false
+export let clicked = false
 
 // Variable to check if search button is clicked
-export default clicked
+// export default clicked
 
 // Updatable click variable
 export function setVariable(newValue) {
@@ -15,13 +15,12 @@ export function getVariable() {
 }
 
 // Render searched query on page
-export const getQuery = (writtenQuery) => {
-  let searchText = document.querySelector('.searchQuery')
-  searchText.innerHTML = ''
-
-  let textText = document.createTextNode(writtenQuery)
-  searchText.appendChild(textText)
-}
+// export const getQuery = (writtenQuery) => {
+// let searchText = document.querySelector('.searchQuery')
+// searchText.innerHTML = ''
+// let textText = document.createTextNode(writtenQuery)
+// searchText.appendChild(textText)
+// }
 
 // Deletes previous searched images
 export const deleteResults = () => {
