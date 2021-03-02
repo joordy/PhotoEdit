@@ -29,7 +29,8 @@
     "@babel/plugin-transform-runtime": "^7.13.9",
     "@babel/runtime-corejs2": "^7.13.9",
     "navigo": "^8.8.6",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "utils": "^0.3.1"
   },
   "browserslist": [
     "since 2017-06"
