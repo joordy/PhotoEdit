@@ -1,10 +1,10 @@
-import { createCanvas } from './_createCanvas'
-import { createFilter } from './_createFilter'
-import { createFooter } from './_createFooter'
-import { createImg } from './_createImg'
-import { createSave } from './_createSave'
-import { createInfo } from './_createInfo'
-import { createSearchHeader } from './_createSearch'
+import { createCanvas } from './_CreateCanvas'
+import { createFilter } from './_CreateFilter'
+import { createFooter } from './_CreateFooter'
+import { createImg } from './_CreateImg'
+import { createSave } from './_CreateSave'
+import { createInfo } from './_CreateInfo'
+import { createSearchHeader } from './_CreateSearch'
 
 export {
   createCanvas,

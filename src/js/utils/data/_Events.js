@@ -1,4 +1,4 @@
-import { fetchQuery } from '../data/index'
+import { fetchQuery } from './index'
 import { createImg } from '../components/index'
 import { setVariable, deleteResults } from '../helpers/index'
 

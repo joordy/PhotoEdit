@@ -4,7 +4,7 @@ import {
   filterItems,
   sortItems,
 } from '../helpers/index'
-import { accessKey, globalUrl, searchUrl } from '../config/config'
+import { accessKey, globalUrl, searchUrl } from '../config/index'
 
 export const fetchQuery = async (query) => {
   let response
