@@ -1,4 +1,4 @@
-import { Article, Button, Div } from './elements/index'
+import { Article, Button, Div } from './elements/_index'
 
 export const createSave = (props) => {
   // Create all HTML elements for save button

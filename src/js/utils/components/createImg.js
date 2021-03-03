@@ -1,4 +1,4 @@
-import { Href, Image, Main } from './elements/index'
+import { Href, Image, Main } from './elements/_index'
 
 export const createImg = (data) => {
   const elem = document.querySelector('#imageWrapper')

@@ -1,4 +1,4 @@
-import { Article, Div, HeadingOne, HeadingTwo, Text } from './elements/index'
+import { Article, Div, HeadingOne, HeadingTwo, Text } from './elements/_index'
 
 export const createInfo = (props) => {
   const div = Div()
