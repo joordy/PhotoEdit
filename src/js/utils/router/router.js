@@ -1,5 +1,5 @@
 import Navigo from 'navigo'
-import { detailedView, homeView, profileView, errorView } from '../views/index'
+import { detailedView, homeView, profileView, errorView } from '../views/_index'
 
 export const Router = () => {
   const router = new Navigo('/', false)
