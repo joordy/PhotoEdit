@@ -24,7 +24,6 @@ export const fetchQuery = async (query) => {
     response = await getMyData(apiUrl)
     const filter = filterItems(response.results)
     const sortedData = sortItems(filter)
-    // const searchText = getQuery(query)
 
     return await sortedData
   } else if (getVariable() == false) {

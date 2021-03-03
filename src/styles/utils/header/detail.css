@@ -79,7 +79,7 @@
 
 #fileInfo article {
   position: absolute;
-  z-index: 1;
+  z-index: 10;
   top: 50px;
   right: 0;
   width: 250px;
@@ -132,6 +132,7 @@
 
 #imgInfo article {
   position: absolute;
+  z-index: 10;
   top: 50px;
   right: calc(-40px - -0.5rem);
   background-color: white;

@@ -14,15 +14,10 @@ export const createSearchHeader = () => {
   const article = Article()
   const button = Button('', 'searchPhotos')
   const input = Input('text', 'searchElement', `Search free photo's`)
-  // const text = Text('')
-
-  // Set attributes needed for other JS files
-  // text.setAttribute('class', 'searchQuery')
 
   // Appending elements inside HTML
   header.appendChild(h1)
   header.appendChild(article)
-  // header.appendChild(text)
 
   article.appendChild(input)
   article.appendChild(button)
