@@ -1,5 +1,5 @@
 import { Router } from './utils/router/router'
-import { LocalStorageSetup } from './utils/data/index'
+import { LocalStorageSetup } from './utils/data/_index'
 
 const init = () => {
   LocalStorageSetup()
