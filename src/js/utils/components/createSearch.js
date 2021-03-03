@@ -5,7 +5,7 @@ import {
   HeadingOne,
   Input,
   Text,
-} from './elements/index'
+} from './elements/_index'
 
 export const createSearchHeader = () => {
   // Create all HTML elements for searchbar

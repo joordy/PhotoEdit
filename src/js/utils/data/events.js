@@ -1,6 +1,6 @@
-import { fetchQuery } from './index'
-import { createImg } from '../components/index'
-import { setVariable, deleteResults } from '../helpers/index'
+import { fetchQuery } from './_index'
+import { createImg } from '../components/_index'
+import { setVariable, deleteResults } from '../helpers/_index'
 
 // Fetch search query based on keycode (enter) or click
 export const userInput = async (data) => {

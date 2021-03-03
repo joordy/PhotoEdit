@@ -1,10 +1,10 @@
-import { userInput, fetchQuery } from '../data/index'
+import { userInput, fetchQuery } from '../data/_index'
 import {
   createSearchHeader,
   createImg,
   createFooter,
-} from '../components/index'
-import { Main } from '../components/elements/_main'
+} from '../components/_index'
+import { Main } from '../components/elements/_index'
 
 export const homeView = (body) => {
   return async () => {

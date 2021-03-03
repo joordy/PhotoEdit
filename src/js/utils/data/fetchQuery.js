@@ -3,7 +3,7 @@ import {
   getVariable,
   filterItems,
   sortItems,
-} from '../helpers/index'
+} from '../helpers/_index'
 import { accessKey, globalUrl, searchUrl } from '../config/index'
 
 export const fetchQuery = async (query) => {

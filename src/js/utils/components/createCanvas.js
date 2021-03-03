@@ -1,4 +1,4 @@
-import { Canvas } from './elements/index'
+import { Canvas } from './elements/_index'
 
 export const createCanvas = async (props) => {
   // Canvas

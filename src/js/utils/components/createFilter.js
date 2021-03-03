@@ -5,8 +5,8 @@ import {
   Label,
   Section,
   Summary,
-} from './elements/index'
-import { filterElements } from '../helpers/_Others'
+} from './elements/_index'
+import { filterElements } from '../helpers/others'
 
 export const createFilter = (content) => {
   const section = Section()

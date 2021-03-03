@@ -4,7 +4,7 @@ import {
   HeadingOne,
   Href,
   Text,
-} from '../components/elements/index'
+} from '../components/elements/_index'
 
 export const errorView = (body) => {
   return async () => {

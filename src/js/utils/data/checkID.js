@@ -1,4 +1,4 @@
-import { getMyData } from '../helpers/index'
+import { getMyData } from '../helpers/_index'
 import { accessKey } from '../config/index'
 
 // return API endpoint based on image ID to get specific image information

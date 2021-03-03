@@ -1,18 +1,18 @@
 // import html2canvas from 'html2canvas'
-import { uniqueFilter } from '../helpers/index'
+import { uniqueFilter } from '../helpers/_index'
 import {
   Href,
   Article,
   docTitle,
   Header,
   Main,
-} from '../components/elements/index'
+} from '../components/elements/_index'
 import {
   createFilter,
   createSave,
   createCanvas,
   createInfo,
-} from '../components/index'
+} from '../components/_index'
 
 export const detailedView = (body) => {
   return async () => {

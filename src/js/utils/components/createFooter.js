@@ -1,4 +1,4 @@
-import { Footer, Href } from './elements/index'
+import { Footer, Href } from './elements/_index'
 
 export const createFooter = () => {
   const footer = Footer()

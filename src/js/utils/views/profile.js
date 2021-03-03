@@ -10,7 +10,7 @@ import {
   Image,
   Main,
   Text,
-} from '../components/elements/index'
+} from '../components/elements/_index'
 
 export const profileView = (body) => {
   return async () => {

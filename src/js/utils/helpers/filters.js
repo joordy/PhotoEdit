@@ -1,4 +1,4 @@
-import { checkID } from '../data/index'
+import { checkID } from '../data/_index'
 
 // Get ID from user's URL.
 export const uniqueFilter = async () => {
