@@ -20,6 +20,7 @@ export const detailedView = (body) => {
     body.setAttribute('class', 'detailPage')
     // Get Image details from clicked link
     const props = await uniqueFilter()
+    console.log(props)
 
     // Change doc title
     const pageTitle = docTitle('Editor | PhotoPaint — Jor')
@@ -30,7 +31,7 @@ export const detailedView = (body) => {
     const main = Main('detailMain')
     const homeButton = Href('/', 'Back')
     const imgCanvas = await createCanvas(props)
-    const filters = createFilter(body)
+    const filters = createFilter(body, props)
     const info = createInfo(props)
     const save = createSave(props)
 

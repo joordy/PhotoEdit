@@ -7,6 +7,7 @@ import { deleteResults } from './others'
 import { uniqueFilter } from './filters'
 import { filterItems } from './filters'
 import { sortItems } from './filters'
+import { filterElements } from './others'
 
 export {
   setVariable,
@@ -17,5 +18,6 @@ export {
   deleteResults,
   uniqueFilter,
   filterItems,
+  filterElements,
   sortItems,
 }
