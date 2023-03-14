@@ -1,25 +1,30 @@
-import Navigo from 'navigo'
-import { detailedView, homeView, profileView, errorView } from '../views/_index'
+import Navigo from "navigo";
+import {
+  detailedView,
+  homeView,
+  profileView,
+  errorView,
+} from "../views/_index";
 
 export const Router = () => {
-  const router = new Navigo('/', false)
-  const body = document.querySelector('body')
+  const router = new Navigo("/", false);
+  const body = document.querySelector("body");
 
   try {
     router
       .on({
-        '/': homeView(body),
-        '/image/:id': detailedView(body),
-        '/profile': profileView(body),
-        '/error': errorView(body),
+        "/": homeView(body),
+        "/image/:id": detailedView(body),
+        "/profile": profileView(body),
+        "/error": errorView(body),
       })
       .notFound(() => {
-        console.error('404...')
-        router.navigate('/error')
+        console.error("404...");
+        router.navigate("/error");
       })
-      .resolve()
+      .resolve();
   } catch (error) {
-    console.error(error)
-    throw new Error(error)
+    console.error(error);
+    throw new Error(error);
   }
-}
+};
