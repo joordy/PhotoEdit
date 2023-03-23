@@ -1,38 +1,21 @@
 {
-  "name": "wafs",
-  "version": "1.0.0",
-  "description": "Web App From Scratch",
-  "main": "index.js",
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/joordy/web-app-from-scratch-2021.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/joordy/web-app-from-scratch-2021/issues"
-  },
-  "homepage": "https://github.com/joordy/web-app-from-scratch-2021#readme",
   "devDependencies": {
-    "eslint": "^7.19.0",
-    "eslint-config-prettier": "^7.2.0",
-    "parcel-bundler": "^1.12.4",
-    "prettier": "^2.2.1"
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "^2.8.6",
+    "vite": "^4.2.0"
   },
   "dependencies": {
-    "@babel/core": "^7.13.8",
-    "@babel/plugin-transform-runtime": "^7.13.9",
-    "@babel/runtime-corejs2": "^7.13.9",
-    "navigo": "^8.8.6",
-    "nodemon": "^2.0.7",
-    "utils": "^0.3.1"
-  },
-  "browserslist": [
-    "since 2017-06"
-  ]
+    "navigo": "^8.11.1",
+    "nodemon": "^2.0.22"
+  }
 }
